@@ -1,0 +1,19 @@
+TD {
+	FONT-SIZE: 9pt; COLOR: #444444; ; FONT-FAMILY: tahoma, arial, helvetica, sans-serif
+}
+A:active {
+	COLOR: #444444
+}
+A:visited {
+	COLOR: #444444; TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: #444444; TEXT-DECORATION: underline
+}
+A:link {
+	COLOR: #444444; TEXT-DECORATION: none
+}
+
+BODY {
+	SCROLLBAR-FACE-COLOR: #336699; FONT-WEIGHT: normal; FONT-SIZE: 14px; MARGIN: 10px; TEXT-DECORATION: none ;margin-top: 0px;
+}

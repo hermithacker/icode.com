@@ -1,0 +1,101 @@
+
+
+
+<table border="1" width="98%" style="border-collapse: collapse">
+
+
+	<tr>
+		<td align="left" width="982" colspan="4" valign="bottom">
+		
+<form name="tablesForm" method="get" action="index.php">
+<input type="hidden" value="rules_show" name="work">
+&nbsp;
+&nbsp;<select dir="ltr" onchange="this.form.submit();" name="class">
+<option value="">显示全部</option>
+<!-- BEGIN class -->
+<option value="{cid}" {selected}>{cname}</option>
+<!-- END class --> 
+</select>
+</form></td>
+	</tr>
+	
+		<tr>
+		<td align="center" width="10%" bgcolor="#8482A5" bordercolor="#636194" height="30">
+		
+		
+		<font color="#EFF3FF">ID</font></td>
+		<td align="left" width="69%" bgcolor="#8482A5" bordercolor="#636194" height="30">
+		
+		
+		<p dir="ltr"><font color="#FFFFFF">&nbsp;名称</font></td>
+		<td align="center" width="10%" bgcolor="#8482A5" bordercolor="#636194" height="30">
+		
+		
+		<font color="#FFFFFF">链接数</font></td>
+		<td align="center" width="10%" bgcolor="#8482A5" bordercolor="#636194" height="30">
+		
+		
+		<font color="#FFFFFF">入库数</font></td>
+	</tr>
+
+	
+	
+	
+	
+		<tr>
+		<td align="center" width="982" colspan="4">
+		
+
+
+
+
+
+
+<table border="1" width="100%"  bordercolor="#636194" cellspacing="0" cellpadding="4" style="border-collapse: collapse" >
+<!-- BEGIN list --> 
+
+	<tr>
+		<td width="10%" bgcolor="#8482A5" align="center" bordercolor="#C6C3C6">
+		<font color="#EFF3FF">{rule_id}</font></td>
+		<td width="69%" bordercolor="#C6C3C6">{rule_name}</td>
+		<td width="10%" bordercolor="#C6C3C6">{rule_link}</td>
+		<td width="10%" bordercolor="#C6C3C6">{rule_import}</td>
+	</tr>
+	<tr>
+		<td width="100%" colspan="4" align="right">
+
+<a href="renewing.php?rules={rule_id}">更新统计</a> |	
+<a href="?work=test_link_work&rules={rule_id}">测试</a> |
+<a href="?work=link_work&rules={rule_id}">采集</a> |
+<a href="?work=add_cont&rules={rule_id}">入库</a> | <a href="?work=edit_rules&rules={rule_id}">编辑</a> |
+<a href="?work=copy_rules&rules={rule_id}">复制</a>
+| <a href="?work=link_show&rules={rule_id}">链接列表</a> | <a href="?work=contlink_show&rules={rule_id}">入库列表</a>  | <a href="?work=del&rules={rule_id}">清空</a> |
+<a onclick="return window.confirm('您确定要删除编号为{rule_id}的采集器『{rule_name}』么?');" href="?work=del&del=all&rules={rule_id}">删除</a>
+		
+		　</td>
+	</tr>
+<!-- END list --> 
+</table>
+
+
+<table border="1" width="100%"  bordercolor="#C0C0C0" cellspacing="0" cellpadding="4" style="border-collapse: collapse" >
+
+
+	<tr>
+
+		<td width="25%">　</td>
+
+	</tr>
+
+</table>
+
+		
+		　</td>
+	</tr>
+</table>
+
+
+
+
+
+

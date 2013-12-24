@@ -1,0 +1,96 @@
+<table border="1" width="100%" cellspacing="0" style="border-collapse: collapse" bordercolor="#C0C0C0" height="700">
+	<tr>
+		<td valign="top" height="649"><table style="BORDER-COLLAPSE: collapse" borderColor="#c0c0c0" cellPadding="0" width="100%" border="1" height="63">
+		<form method="post" action="index.php?work=all_replace&works=replace">
+		<input type="hidden" value="cjrule"  name="cjrule">
+		<tr>
+				<td bgColor="#636194" width="770" colspan="2" height="25">	
+				<p dir="ltr"><font color="#F7F7F7">替换入库数据</font></td>
+		</tr>
+				
+				<tr>
+					<td bgColor="#f7f7f7">
+					<input type="hidden"  value="datas" name="table" >&nbsp;替换入库数据</td>
+					<td width="80%" bgColor="#efefef" height="280">&nbsp;类型： <select name="str">
+					<option value="body" selected>内容</option>
+					<option value="title">标题</option>
+					<option value="author">作者</option>
+					<option value="source">来源</option>
+					<option value="date">时间</option>
+					</select><p>
+									&nbsp;替换范围：采集器 <select name="rules">
+									<option value="">全部采集器</option>
+									<!-- BEGIN list --> 
+									<option value="{rule_id}" >{rule_name}</option>									
+									<!-- END list --> 
+									</select>
+					<p>&nbsp;&nbsp;&nbsp; 将&nbsp;<textarea rows="5" cols="60" name="from_str"></textarea>&nbsp;<p>替换成&nbsp;<textarea rows="5" cols="60" name="to_str"></textarea>&nbsp;</td>
+				</tr>
+				
+	<tr>
+		<td width="770" colspan="2">　
+		<input class="button" type="submit" value="开始替换"></td>	
+	</tr>
+
+			</table>
+			</form>
+			<p dir="ltr">　</p>
+			
+			
+			<table style="BORDER-COLLAPSE: collapse" borderColor="#c0c0c0" cellPadding="0" width="100%" border="1" height="63">
+		<form method="post" action="index.php?work=all_replace&works=replace">
+		<input type="hidden" value="rules"  name="cjrule">
+		<tr>
+				<td bgColor="#636194" width="770" colspan="2" height="25">	
+				<p dir="ltr"><font color="#F7F7F7">替换连接数据</font></td>
+		</tr>
+				
+				<tr>
+					<td bgColor="#f7f7f7">
+					<input type="hidden" value="links" name="table">&nbsp;替换连接数据</td>
+					<td width="80%" bgColor="#efefef" height="280">
+					<p dir="ltr">&nbsp;类型：<select name="str">
+					<option value="title" selected>标题</option>
+					<option value="url">连接地址</option>
+					<option value="date">时间</option>
+					<option value="adopt">是否已采集</option>
+					<option value="import">是否采集</option>
+					</select> </p>
+					<p>
+									&nbsp;替换范围：采集器 <select name="rules">
+									<option value="">全部采集器</option>
+									<!-- BEGIN list --> 
+									<option value="{rule_id}" >{rule_name}</option>									
+									<!-- END list --> 
+									</select>
+					<p>&nbsp;&nbsp;&nbsp; 将&nbsp;<textarea rows="5" cols="60" name="from_str"></textarea>&nbsp;<p>替换成&nbsp;<textarea rows="5" cols="60" name="to_str"></textarea>&nbsp;</td>
+				</tr>
+				
+	<tr>
+		<td width="770" colspan="2">　
+		<input class="button" type="submit" value="开始替换"></td>	
+	</tr>
+
+			</table>
+			</form>
+		
+		
+		</td>
+	</tr>
+	
+			<tr>
+			<td valign="top">
+			
+							<p dir="ltr">注意：请慎重使用替换功能。区分大小写。<br>选择所要替换的类型、采集范围，输入要替换的字符 
+							提交即可<br>例：采集来的缩略图 替换成大图&nbsp; 比如 小图 名字格式为 
+							xxx_small.jpg 大图格式为 xxx_big.jpg , 输入“small.jpg”&nbsp; 
+							替换成 “big.jpg” 便将所以小图替换成大图。 <br>　</td>
+		</tr>
+</table>
+
+
+
+
+
+
+	

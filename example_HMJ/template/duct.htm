@@ -1,0 +1,36 @@
+
+<form method="post" action="duct_work.php?id={id}">
+
+<table style="BORDER-COLLAPSE: collapse" cellSpacing="0" cellPadding="0" width="100%" border="0">
+	<tr>
+		<td style="BORDER-RIGHT: #cccccc 1px solid; BORDER-TOP: #cccccc 1px solid; BORDER-LEFT: #cccccc 1px solid; BORDER-BOTTOM: #cccccc 1px solid" bgColor="#f7f7f7" height="30" colspan="2">
+		<p><select style="WIDTH: 250px" multiple size="10" name="rules_id[]">
+<!-- BEGIN rule -->
+<option value="{rule_id}" {selected}>{rule_name}</option>
+<!-- END rule --> 
+</select>
+</p>
+		<p>　</p></td>
+			</tr>
+	<tr>
+		<td style="BORDER-RIGHT: #cccccc 1px solid; BORDER-TOP: #cccccc 1px solid; BORDER-LEFT: #cccccc 1px solid; BORDER-BOTTOM: #cccccc 1px solid" bgColor="#f7f7f7" height="30">
+		<center>每次导入</center></td>
+		<td style="BORDER-RIGHT: #cccccc 1px solid; BORDER-TOP: #cccccc 1px solid; BORDER-LEFT: #cccccc 1px solid; BORDER-BOTTOM: #cccccc 1px solid" bgColor="#efefef">
+		&nbsp;&nbsp;<input class="button" size="5" value="500" name="duct_num"> 条 
+		(最大5000)</td>
+	</tr>
+	<tr>
+		<td style="BORDER-RIGHT: #cccccc 1px solid; BORDER-TOP: #cccccc 1px solid; BORDER-LEFT: #cccccc 1px solid; BORDER-BOTTOM: #cccccc 1px solid" align="right" bgColor="#f7f7f7" colSpan="2" height="30">
+		<input class="button" type="submit" value="开始导入">&nbsp;&nbsp;</td>
+	</tr>
+	<tr>
+		<td style="BORDER-RIGHT: #cccccc 1px solid; PADDING-RIGHT: 5pt; BORDER-TOP: #cccccc 1px solid; PADDING-LEFT: 5pt; PADDING-BOTTOM: 5pt; BORDER-LEFT: #cccccc 1px solid; PADDING-TOP: 5pt; BORDER-BOTTOM: #cccccc 1px solid" align="left" bgColor="#f7f7f7" colSpan="2" height="30">
+		<br>
+		<br>
+		<b>说明：</b><br>
+		&nbsp;&nbsp;&nbsp;&nbsp;由于采集器的增多，原来设置导入的时候所选择的采集器可能不适应现有的情况，为了方便用户，我们在这一步导入之前，可以重新设定你要导入的采集器的内容。在这里，你可以通过更新左侧的列表，而重新对你原来选择的采集器再进一步更新。<br>
+		<br>
+　</td>
+	</tr>
+</table>
+</form>

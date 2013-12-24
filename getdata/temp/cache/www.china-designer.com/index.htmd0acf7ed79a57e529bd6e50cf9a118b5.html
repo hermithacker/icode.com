@@ -1,0 +1,762 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<META content="易装修,室内设计师,室内设计公司,设计机构,建筑师,装饰公司,装修公司,建筑设计师,建筑设计公司,室内建筑师,景观设计师,灯光设计师,配饰设计师,找设计师" name="keywords">
+<META content="装修找设计师/设计公司/装饰公司,就上易装修!易装修是中国最大的建筑师与室内设计师搜索引擎,拥有海量建筑师,室内设计师,设计公司,近20万建筑师和室内设计师会员覆盖全国及港澳台地区,100万幅建筑设计/室内设计/家居装饰的海量图库及丰富的装修材料库,并提供建筑设计及家装公装室内设计委托咨询服务.满足您装修过程中的一切需求!" name="description">
+<title>建筑/室内设计师|设计公司|装饰公司搜索列表 - 易装修</title>
+<link href="/ezx/css/gloabl.css" rel="stylesheet" type="text/css" />
+<link href="/ezx/css/list.css" rel="stylesheet" type="text/css" />
+<script language="javascript" src='/home/locationChange.js'></script>
+<script language="javascript" src="/js/jquery1-3.js"></script>
+<script language="javascript" src="/js/jquery.highlightRegex.js"></script>
+<style>
+.highlight{color: #FF0000;background: #FFFF00;}
+</style>
+<!--[if gte IE 8]>
+<style type="text/css">
+li.op2,li.op3,li.op4{ margin-top:10px;}
+</style>
+<![endif]-->
+</head>
+<body>
+<!--顶部start -->
+<div class="t_box" id="header">
+ <div class="c_box">
+ <div class="t_logo"><img src="/ezx/images/top_logo.gif" alt="" width="222" height="38" /></div>
+ <div class="t_mline"></div>
+ <div class="t_menu">
+  <ul>
+   <li><a href="/index.asp" target="_blank">首页</a></li>
+   <li><a href="/home/homeindex.asp" target="_blank">设计师家园</a></li>
+   <li><a href="/material/" target="_blank">设计选材</a></li>
+   <li><a href="/owner/" target="_blank">业主通道</a></li>
+   <li><a href="/pics/" target="_blank">设计图库</a></li>
+   <li><a href="/news2/" target="_blank">设计资讯</a></li>
+   <li><a href="/hr/" target="_blank">招聘求职</a></li>
+   <li class="t_m_login"><a href="/login/login1.asp" target="_blank">登陆</a> <a href="/login/login1.asp" target="_blank">注册</a></li>
+  </ul>
+  </div>
+  </div>
+</div>
+<!--顶部end -->
+<!--Menu start -->
+<div id="menu" class="m_box">
+ <div class="s_logo"><img src="/ezx/images/s_log.jpg" /></div>
+ <div class="m_c_box">
+  <ul>
+   <li id="xb_menu_0"><a href="/ezx/">首 页</a></li>
+   <li id="xb_menu_1"><a href="/ezx/designer.asp">找设计师</a></li>
+   <li id="xb_menu_2"><a href="/ezx/designCompany.asp">找设计公司</a></li>
+   <li id="xb_menu_3"><a href="/ezx/designCompany2.asp">找装饰公司</a></li>
+   <li id="xb_menu_4"><a href="/ezx/material.asp">找材料</a></li>
+   <li id="xb_menu_5"><a href="/pics/">设计图库</a></li>
+  </ul>
+ </div>
+<script language="javascript" type="text/javascript">
+//当前面字加粗
+//window.onload = function(){
+	var temp_Str = "/ezx/searchdesignerlist.asp";
+	var total_page = temp_Str.toLowerCase();
+	//各页scriptname,用|分隔
+	var pages = new Array ;
+	pages[0] = "index.asp|cooperate/index.asp";
+	pages[1] = "designer.asp";
+	pages[2] = "designcompany.asp";
+	pages[3] = "designcompany2.asp";
+	pages[4] = "material.asp";
+	pages[5] = "co.asp";
+
+	var star_Num = 0;
+	var end_Num = pages.length;
+	for (var i=star_Num;i<end_Num;i++){
+		ary_some_pages = pages[i].split("|");
+		for (var j=0;j<ary_some_pages.length;j++){
+			if (total_page == "/ezx/"+ary_some_pages[j]){
+				var obj_str = "xb_menu_" + i;
+				var obj_A = document.getElementById(obj_str);
+				obj_A.className = "m_color";
+			}
+		}
+	}
+//}
+</script>
+ <div class="owner"><a href="/owner/" target="_blank">业主发布招标信息</a></div>
+</div>
+<div class="clear"></div>
+<!--Menu end -->
+
+<!--Searcher start-->
+<div id="s_box" class="c_c_box">
+<script language="javascript">
+
+function checkSearch3(){
+	var f_err = false;
+	if($('#mainbest').val()!=0)	f_err = true;
+	if($('#Location').val()!=0)	f_err = true;
+	if($('#Job').val()!=0)	f_err = true;
+	if($('#designerclassid').val()!=-1)	f_err = true;
+	if($('#keywords3').val()!=""&&$('#keywords3').val()!="关键词")	f_err = true;
+	if (!f_err) alert("请至少选择一个条件进行搜索！");
+	return f_err;
+}
+</script>
+<form action="" method="get" id="SearchForm" name="SearchForm" target="_self">
+<ul class="clearfix">
+<li class="op2"><select name="mainbest" id="mainbest" >
+
+<option value="0" selected>设计专长</option>
+
+<option value="1" >住宅公寓</option>
+
+<option value="2" >别墅</option>
+
+<option value="3" >办公空间</option>
+
+<option value="4" >购物空间</option>
+
+<option value="5" >酒店空间</option>
+
+<option value="6" >餐饮空间</option>
+
+<option value="7" >娱乐空间</option>
+
+<option value="8" >休闲健身空间</option>
+
+<option value="9" >文博空间</option>
+
+<option value="10" >展览空间</option>
+
+<option value="11" >教育空间</option>
+
+<option value="12" >医疗空间</option>
+
+<option value="13" >交通空间</option>
+
+<option value="14" >工厂</option>
+
+<option value="15" >公园广场</option>
+
+<option value="16" >样板间/售楼处</option>
+
+<option value="17" >其他</option>
+
+</select></li>
+<li class="op3"><SELECT onChange="InitCitys_edit_2(document.getElementById('Location').value,document.getElementById('sel_city'));" size="1" id="Location" name="Location" >
+
+	<option  value=0>地区不限</option>
+
+	<option  value=1>北京</option>
+
+	<option  value=2>上海</option>
+
+	<option  value=3>天津</option>
+
+	<option selected value=4>重庆</option>
+
+	<option  value=5>安徽</option>
+
+	<option  value=6>福建</option>
+
+	<option  value=7>甘肃</option>
+
+	<option  value=8>广东</option>
+
+	<option  value=9>广西</option>
+
+	<option  value=10>贵州</option>
+
+	<option  value=11>海南</option>
+
+	<option  value=12>河北</option>
+
+	<option  value=13>河南</option>
+
+	<option  value=14>黑龙江</option>
+
+	<option  value=15>湖北</option>
+
+	<option  value=16>湖南</option>
+
+	<option  value=17>吉林</option>
+
+	<option  value=18>江苏</option>
+
+	<option  value=19>江西</option>
+
+	<option  value=20>辽宁</option>
+
+	<option  value=21>内蒙古</option>
+
+	<option  value=22>宁夏</option>
+
+	<option  value=23>青海</option>
+
+	<option  value=24>山东</option>
+
+	<option  value=25>山西</option>
+
+	<option  value=26>陕西</option>
+
+	<option  value=27>四川</option>
+
+	<option  value=28>西藏</option>
+
+	<option  value=29>新疆</option>
+
+	<option  value=30>云南</option>
+
+	<option  value=31>浙江</option>
+
+	<option  value=32>台湾</option>
+
+	<option  value=33>香港</option>
+
+	<option  value=34>澳门</option>
+
+	<option  value=35>国外</option>
+
+</SELECT></li>
+<li class="op4"><SELECT id="sel_city" size="1" name="sel_city">
+
+ <script>
+	var sur	=4;
+	var ary = eval('city'+sur);
+	var citynumber ='0';
+	len=ary.length;	
+	for(i=0;i<len;i++){
+		text_value=ary[i].split(" ");
+		text=text_value[1];
+		value=text_value[0];
+		if(value==citynumber){
+			document.getElementById("sel_city").options.add(new Option(text,value));
+		}
+	}		
+	</script>
+	<script>InitCitys_edit_3(document.getElementById("Location").value,document.getElementById("sel_city"));</script>
+
+</SELECT></li>
+<li class="op5"><select name="Job" id="Job">
+
+<option value="0" >类型不限</option>
+
+<option value="1" >建筑设计师</option>
+
+<option value="2" selected>室内设计师</option>
+
+<option value="3" >景观设计师</option>
+
+<option value="4" >其他个人会员</option>
+
+<option value="5" >建筑设计公司</option>
+
+<option value="6" >室内设计公司</option>
+
+<option value="7" >景观设计公司</option>
+
+<option value="8" >家装公司</option>
+
+<option value="9" >公装公司</option>
+
+<option value="10" >其他公司</option>
+
+<option value="11" >全部设计师</option>
+
+<option value="12" >全部公司</option>
+
+</select>
+<select name="designerclassid" id="designerclassid" >
+  
+  <option value="-1" selected>级别不限</option>
+  
+  <option value="0" >会员</option>
+  
+  <option value="1" >推荐会员</option>
+  
+  <option value="2" >精英设计师</option>
+  
+</select>
+</li>
+<li class="op1" ><input name="keywords" id="keywords3" type="text" value="关键词" maxlength="50" size="30" class="sInput" onclick="if(this.value=='关键词'){this.value='';this.className='Input ebb';}" >&nbsp;<input type="submit" class="btn_search" value=""></li> 
+</ul>
+</form>
+<!--http://192.168.0.201:8080/myapp/searchDesigner.jsp?keywords=&PageNO=17&PageSize=12&birthday1=0&birthday2=0&mainbest=0&designerclassid=-1&location=4&sel_city=0&job=2&charges=0&2013-9-20 23:34:21-->
+</div>
+<!--Searcher end-->
+<!--keywordsBox start-->
+<div class="c_c_box" id="keywords">
+
+设计师：<a href="/ezx/new_designer_s/?Job=11">276470</a>人  设计公司：<a href="/ezx/new_designer_s/?Job=12">14986</a>个  装饰公司：<a href="/ezx/new_designer_s/?Job=8">19010</a>家  装修材料库：<a href="/ezx/new_product_s/">84739</a>  设计图库：<a href="/pics/">1792102</a>幅
+</div>
+
+<!--keywordsBox end-->
+<div class="clear"></div>
+<!--leftContent start-->
+
+<div class="c_c_box">
+ <div class="l_content">
+
+  <div class="type">
+   <ul>
+   <li><strong>年 龄：</strong></li>
+   <li><a href="?keywords=&mainbest=0&designerclassid=-1&location=4&sel_city=0&job=2&charges=0&PageNO=17&PageSize=12&vType=2&birthday1=50&birthday2=65">65-50岁</a></li>
+   <li><a href="?keywords=&mainbest=0&designerclassid=-1&location=4&sel_city=0&job=2&charges=0&PageNO=17&PageSize=12&vType=2&birthday1=45&birthday2=50">50-45岁</a></li>
+   <li><a href="?keywords=&mainbest=0&designerclassid=-1&location=4&sel_city=0&job=2&charges=0&PageNO=17&PageSize=12&vType=2&birthday1=35&birthday2=45">45-35岁</a></li>
+   <li><a href="?keywords=&mainbest=0&designerclassid=-1&location=4&sel_city=0&job=2&charges=0&PageNO=17&PageSize=12&vType=2&birthday1=25&birthday2=35">35-25岁</a></li>
+   <li><a href="?keywords=&mainbest=0&designerclassid=-1&location=4&sel_city=0&job=2&charges=0&PageNO=17&PageSize=12&vType=2&birthday1=18&birthday2=25">25-18岁</a></li>
+   <li><a href="?keywords=&mainbest=0&designerclassid=-1&location=4&sel_city=0&job=2&charges=0&PageNO=17&PageSize=12&vType=2&birthday1=1&birthday2=18">18岁以下</a></li>
+    <div class="clear"></div>
+   </ul>
+   <div class="clear"></div>
+  </div>
+
+  <div class="result_box">
+   <div class="t1">
+   <div class="t2">&nbsp;根据关键字“<strong></strong>”搜索到相关结果2634项，用时0.078秒，每页显示12项，当前是第17页 </div></div>
+   <div class="s_tools">
+     <input name="b" type="button" value="对比设计师" onclick="duibiit('c_accountid');" />
+   &nbsp;&nbsp;显示方式：<a href="?keywords=&mainbest=0&designerclassid=-1&location=4&sel_city=0&job=2&charges=0&PageNO=17&PageSize=12&birthday1=0&birthday2=0&vType=1" title="图片列表排列"><img src="/ezx/images/display_grid.gif" width="18" height="15" /></a> <a href="?keywords=&mainbest=0&designerclassid=-1&location=4&sel_city=0&job=2&charges=0&PageNO=17&PageSize=12&birthday1=0&birthday2=0&vType=2" title="图文列表排列"><img src="/ezx/images/display_list_cur.gif" width="18" height="15" /></a> <a href="?keywords=&mainbest=0&designerclassid=-1&location=4&sel_city=0&job=2&charges=0&PageNO=17&PageSize=12&birthday1=0&birthday2=0&vType=3" title="文字列表排列"><img src="/ezx/images/display_text.gif" width="18" height="15" /></a> 
+   每页显示数量：
+   <select name="select" id="select" onchange="location.href='?keywords=&mainbest=0&designerclassid=-1&location=4&sel_city=0&job=2&charges=0&PageNO=17&vType=2&birthday1=0&birthday2=0&PageSize='+this.value">
+     <option value="12" selected="selected">12</option>
+     <option value="24">24</option>
+     <option value="48">48</option>
+     <option value="80">80</option>
+   </select>
+    <!--排充：
+    <select name="select2" id="select2">
+    </select> -->
+     <!--只显示：
+     <select name="select3" id="select3">
+      <option value=""></option>
+     </select> -->收费价格
+     <label>
+     <select name="charges" id="charges" onchange="location.href='?keywords=&mainbest=0&designerclassid=-1&location=4&sel_city=0&job=2&PageNO=17&PageSize=12&vType=2&birthday1=0&birthday2=0&charges='+this.value">
+      <option value="" selected="selected">请选择</option>
+      <option value="1">50以下</option>
+      <option value="2">50-100</option>
+      <option value="3">100-200</option>
+      <option value="4">200-300</option>
+      <option value="5">300-500</option>
+      <option value="6">500-800</option>
+      <option value="7">800-1000</option>
+      <option value="8">1000以上</option>
+     </select>
+     </label>
+     元/m2
+     &nbsp;&nbsp;&nbsp;<a href="/company/designer_service6.asp" target="_blank"><img src="/ezx/images/vip.gif" alt="申请推荐设计师" width="137" height="18" /></a></div>
+  </div>
+
+<div id="content_box">
+
+  <div class="s_imgag_text_list">
+   <div class="slist_title">
+     <div class="db">&nbsp;对比</div>
+     <div class="photo">&nbsp;照片</div>
+     <div class="content">姓名</div>
+     <div class="work">作品/案例</div>
+     <div class="location">地区</div>
+     <div class="price">收费价格/m2</div>
+   </div>
+ 
+   <div class="slist_content">
+     <div class="db">&nbsp;<input name="c_accountid" type="checkbox" value="214335" /></div>
+     <div class="photo">&nbsp;<a href="http://214335.china-designer.com/" target="_blank" title="叶峻志"><img src="http://img2.china-designer.com/vip/myphotos_new/003/small/20081213140815214335.jpg" width="58" height="58" align="absmiddle" /></a></div>
+     <div class="content">
+      <h3><a href="http://214335.china-designer.com/" target="_blank">叶峻志</a> </h3>
+      <p class="about">[室内设计师] 设计专长：
+      别墅</p>
+      <p class="about2">214335  叶峻志 YGGMM 2012年-年度新锐设计师成功案例	南滨商务休闲酒店（2009）、重庆万友康年酒店中餐厅（2009）
+嘉陵本田新工厂办公楼（2010）、重庆海电风能科技有限公司办公楼（2010）
+重庆光大证券大坪营业厅...</p>
+      <p class="about3"><img src="/ezx/images/ico_mail.gif" width="16" height="16" align="absmiddle" /> <a href="/home/214335_5.htm" target="_blank">留言洽谈</a> <img src="/ezx/images/ico_tel.gif" width="17" height="17" align="absmiddle" /> <a href="/home/214335_1_1.htm" target="_blank">电话联系</a> <img src="/ezx/images/ico_ok.gif" width="22" height="15" /><a href="/owner/owners_ProjectAdd2.asp?accountid=&ToID=214335"  class="inviteDesign" target="_blank">委托设计</a></p>
+     </div>
+     <div class="work">15/2</div>
+     <div class="location">重庆
+	<script>document.write(GetCityName(4,480,document.cityname))</script> 
+	</div>
+     <div class="price">面议</div>
+     <div class="clear line"></div>
+   </div>
+ 
+   <div class="slist_content">
+     <div class="db">&nbsp;<input name="c_accountid" type="checkbox" value="1010120" /></div>
+     <div class="photo">&nbsp;<a href="http://1010120.china-designer.com/" target="_blank" title="华陆平"><img src="http://img2.china-designer.com/vip/myphotos_new/201208/small/20120828215330619619.jpg" width="58" height="58" align="absmiddle" /></a></div>
+     <div class="content">
+      <h3><a href="http://1010120.china-designer.com/" target="_blank">华陆平</a> </h3>
+      <p class="about">[室内设计师] 设计专长：
+      住宅公寓</p>
+      <p class="about2">1010120  华陆平 undefined 姓名：华陆平
+毕业院校：西南大学美术学院室内装潢专业。
+中国99CAD注册设计师
+工作简历
+2001年分别在重庆知名装饰公司实习。
+2002年在深圳福田区凯跃建筑设计公司学习，在一年的时间里将...</p>
+      <p class="about3"><img src="/ezx/images/ico_mail.gif" width="16" height="16" align="absmiddle" /> <a href="/home/1010120_5.htm" target="_blank">留言洽谈</a> <img src="/ezx/images/ico_tel.gif" width="17" height="17" align="absmiddle" /> <a href="/home/1010120_1_1.htm" target="_blank">电话联系</a> <img src="/ezx/images/ico_ok.gif" width="22" height="15" /><a href="/owner/owners_ProjectAdd2.asp?accountid=&ToID=1010120"  class="inviteDesign" target="_blank">委托设计</a></p>
+     </div>
+     <div class="work">4/5</div>
+     <div class="location">重庆
+	<script>document.write(GetCityName(4,480,document.cityname))</script> 
+	</div>
+     <div class="price">面议</div>
+     <div class="clear line"></div>
+   </div>
+ 
+   <div class="slist_content">
+     <div class="db">&nbsp;<input name="c_accountid" type="checkbox" value="60619" /></div>
+     <div class="photo">&nbsp;<a href="http://60619.china-designer.com/" target="_blank" title="舟舟"><img src="http://img2.china-designer.com/vip/myphotos_new/001/small/myphoto.gif" width="58" height="58" align="absmiddle" /></a></div>
+     <div class="content">
+      <h3><a href="http://60619.china-designer.com/" target="_blank">舟舟</a> </h3>
+      <p class="about">[室内设计师] 设计专长：
+      样板间/售楼处</p>
+      <p class="about2">60619  舟舟 舟舟 设计=你 我 衣食住行 心跳 ………
+
+
+ 设计艺术学院 重庆室内设计师样板间/售楼处...</p>
+      <p class="about3"><img src="/ezx/images/ico_mail.gif" width="16" height="16" align="absmiddle" /> <a href="/home/60619_5.htm" target="_blank">留言洽谈</a> <img src="/ezx/images/ico_tel.gif" width="17" height="17" align="absmiddle" /> <a href="/home/60619_1_1.htm" target="_blank">电话联系</a> <img src="/ezx/images/ico_ok.gif" width="22" height="15" /><a href="/owner/owners_ProjectAdd2.asp?accountid=&ToID=60619"  class="inviteDesign" target="_blank">委托设计</a></p>
+     </div>
+     <div class="work">23/0</div>
+     <div class="location">重庆
+	<script>document.write(GetCityName(4,474,document.cityname))</script> 
+	</div>
+     <div class="price">面议</div>
+     <div class="clear line"></div>
+   </div>
+ 
+   <div class="slist_content">
+     <div class="db">&nbsp;<input name="c_accountid" type="checkbox" value="789005" /></div>
+     <div class="photo">&nbsp;<a href="http://789005.china-designer.com/" target="_blank" title="周建党"><img src="http://img2.china-designer.com/vip/myphotos_new/026/small/20115734424789005.jpg" width="58" height="58" align="absmiddle" /></a></div>
+     <div class="content">
+      <h3><a href="http://789005.china-designer.com/" target="_blank">周建党</a> </h3>
+      <p class="about">[室内设计师] 设计专长：
+      娱乐空间</p>
+      <p class="about2">789005  周建党 JＡＮＤy 年-2006年就读于重庆大学建筑装饰专业
+2006年-2008年担任重庆府尚装饰工程有限公司精品设计师
+2009年-2010年担任重庆东朔装饰工程有限公司首席设计师
+2010年10月至今担任重庆鼎阁装饰公司设...</p>
+      <p class="about3"><img src="/ezx/images/ico_mail.gif" width="16" height="16" align="absmiddle" /> <a href="/home/789005_5.htm" target="_blank">留言洽谈</a> <img src="/ezx/images/ico_tel.gif" width="17" height="17" align="absmiddle" /> <a href="/home/789005_1_1.htm" target="_blank">电话联系</a> <img src="/ezx/images/ico_ok.gif" width="22" height="15" /><a href="/owner/owners_ProjectAdd2.asp?accountid=&ToID=789005"  class="inviteDesign" target="_blank">委托设计</a></p>
+     </div>
+     <div class="work">15/4</div>
+     <div class="location">重庆
+	<script>document.write(GetCityName(4,473,document.cityname))</script> 
+	</div>
+     <div class="price">面议</div>
+     <div class="clear line"></div>
+   </div>
+ 
+   <div class="slist_content">
+     <div class="db">&nbsp;<input name="c_accountid" type="checkbox" value="174559" /></div>
+     <div class="photo">&nbsp;<a href="http://174559.china-designer.com/" target="_blank" title="王凯"><img src="http://img2.china-designer.com/vip/myphotos_new/002/small/200846144044174559.jpg" width="58" height="58" align="absmiddle" /></a></div>
+     <div class="content">
+      <h3><a href="http://174559.china-designer.com/" target="_blank">王凯</a> </h3>
+      <p class="about">[室内设计师] 设计专长：
+      住宅公寓</p>
+      <p class="about2">174559  王凯 中国元素 设计追求的是个性的张扬！ 0 重庆室内设计师住宅公寓...</p>
+      <p class="about3"><img src="/ezx/images/ico_mail.gif" width="16" height="16" align="absmiddle" /> <a href="/home/174559_5.htm" target="_blank">留言洽谈</a> <img src="/ezx/images/ico_tel.gif" width="17" height="17" align="absmiddle" /> <a href="/home/174559_1_1.htm" target="_blank">电话联系</a> <img src="/ezx/images/ico_ok.gif" width="22" height="15" /><a href="/owner/owners_ProjectAdd2.asp?accountid=&ToID=174559"  class="inviteDesign" target="_blank">委托设计</a></p>
+     </div>
+     <div class="work">20/0</div>
+     <div class="location">重庆
+	<script>document.write(GetCityName(4,486,document.cityname))</script> 
+	</div>
+     <div class="price">50以下</div>
+     <div class="clear line"></div>
+   </div>
+ 
+   <div class="slist_content">
+     <div class="db">&nbsp;<input name="c_accountid" type="checkbox" value="170864" /></div>
+     <div class="photo">&nbsp;<a href="http://170864.china-designer.com/" target="_blank" title="王毅"><img src="http://img2.china-designer.com/vip/myphotos_new/002/small/2008328111833170864.jpg" width="58" height="58" align="absmiddle" /></a></div>
+     <div class="content">
+      <h3><a href="http://170864.china-designer.com/" target="_blank">王毅</a> </h3>
+      <p class="about">[室内设计师] 设计专长：
+      住宅公寓</p>
+      <p class="about2">170864  王毅 0 0 0 重庆室内设计师住宅公寓...</p>
+      <p class="about3"><img src="/ezx/images/ico_mail.gif" width="16" height="16" align="absmiddle" /> <a href="/home/170864_5.htm" target="_blank">留言洽谈</a> <img src="/ezx/images/ico_tel.gif" width="17" height="17" align="absmiddle" /> <a href="/home/170864_1_1.htm" target="_blank">电话联系</a> <img src="/ezx/images/ico_ok.gif" width="22" height="15" /><a href="/owner/owners_ProjectAdd2.asp?accountid=&ToID=170864"  class="inviteDesign" target="_blank">委托设计</a></p>
+     </div>
+     <div class="work">23/0</div>
+     <div class="location">重庆
+	<script>document.write(GetCityName(4,471,document.cityname))</script> 
+	</div>
+     <div class="price">面议</div>
+     <div class="clear line"></div>
+   </div>
+ 
+   <div class="slist_content">
+     <div class="db">&nbsp;<input name="c_accountid" type="checkbox" value="296822" /></div>
+     <div class="photo">&nbsp;<a href="http://296822.china-designer.com/" target="_blank" title="吴妍娇"><img src="http://img2.china-designer.com/vip/myphotos_new/015/small/2010322164930296822.JPG" width="58" height="58" align="absmiddle" /></a></div>
+     <div class="content">
+      <h3><a href="http://296822.china-designer.com/" target="_blank">吴妍娇</a> </h3>
+      <p class="about">[室内设计师] 设计专长：
+      住宅公寓</p>
+      <p class="about2">296822  吴妍娇 joy 设计精神：热爱 忠诚 求实 创新
+设计理念：以人为本、个性规划、时尚创意、健康安全
+ 室内设计公司 重庆室内设计师住宅公寓...</p>
+      <p class="about3"><img src="/ezx/images/ico_mail.gif" width="16" height="16" align="absmiddle" /> <a href="/home/296822_5.htm" target="_blank">留言洽谈</a> <img src="/ezx/images/ico_tel.gif" width="17" height="17" align="absmiddle" /> <a href="/home/296822_1_1.htm" target="_blank">电话联系</a> <img src="/ezx/images/ico_ok.gif" width="22" height="15" /><a href="/owner/owners_ProjectAdd2.asp?accountid=&ToID=296822"  class="inviteDesign" target="_blank">委托设计</a></p>
+     </div>
+     <div class="work">6/3</div>
+     <div class="location">重庆
+	<script>document.write(GetCityName(4,473,document.cityname))</script> 
+	</div>
+     <div class="price">面议</div>
+     <div class="clear line"></div>
+   </div>
+ 
+   <div class="slist_content">
+     <div class="db">&nbsp;<input name="c_accountid" type="checkbox" value="69981" /></div>
+     <div class="photo">&nbsp;<a href="http://69981.china-designer.com/" target="_blank" title="文东"><img src="http://img2.china-designer.com/vip/myphotos/small/200572290800.jpg" width="58" height="58" align="absmiddle" /></a></div>
+     <div class="content">
+      <h3><a href="http://69981.china-designer.com/" target="_blank">文东</a> </h3>
+      <p class="about">[室内设计师] 设计专长：
+      住宅公寓</p>
+      <p class="about2">69981  文东 可乐 没有最好只有更好---相信我能的
+
+
+对不起目前还没有 １ 重庆室内设计师住宅公寓...</p>
+      <p class="about3"><img src="/ezx/images/ico_mail.gif" width="16" height="16" align="absmiddle" /> <a href="/home/69981_5.htm" target="_blank">留言洽谈</a> <img src="/ezx/images/ico_tel.gif" width="17" height="17" align="absmiddle" /> <a href="/home/69981_1_1.htm" target="_blank">电话联系</a> <img src="/ezx/images/ico_ok.gif" width="22" height="15" /><a href="/owner/owners_ProjectAdd2.asp?accountid=&ToID=69981"  class="inviteDesign" target="_blank">委托设计</a></p>
+     </div>
+     <div class="work">28/0</div>
+     <div class="location">重庆
+	<script>document.write(GetCityName(4,503,document.cityname))</script> 
+	</div>
+     <div class="price">面议</div>
+     <div class="clear line"></div>
+   </div>
+ 
+   <div class="slist_content">
+     <div class="db">&nbsp;<input name="c_accountid" type="checkbox" value="159711" /></div>
+     <div class="photo">&nbsp;<a href="http://159711.china-designer.com/" target="_blank" title="黑ヤ`咖啡"><img src="http://img2.china-designer.com/vip/myphotos_new/001/small/20071112175528159711.jpg" width="58" height="58" align="absmiddle" /></a></div>
+     <div class="content">
+      <h3><a href="http://159711.china-designer.com/" target="_blank">黑ヤ`咖啡</a> </h3>
+      <p class="about">[室内设计师] 设计专长：
+      住宅公寓</p>
+      <p class="about2">159711  黑ヤ`咖啡 0 0 0 重庆室内设计师住宅公寓...</p>
+      <p class="about3"><img src="/ezx/images/ico_mail.gif" width="16" height="16" align="absmiddle" /> <a href="/home/159711_5.htm" target="_blank">留言洽谈</a> <img src="/ezx/images/ico_tel.gif" width="17" height="17" align="absmiddle" /> <a href="/home/159711_1_1.htm" target="_blank">电话联系</a> <img src="/ezx/images/ico_ok.gif" width="22" height="15" /><a href="/owner/owners_ProjectAdd2.asp?accountid=&ToID=159711"  class="inviteDesign" target="_blank">委托设计</a></p>
+     </div>
+     <div class="work">24/0</div>
+     <div class="location">重庆
+	<script>document.write(GetCityName(4,485,document.cityname))</script> 
+	</div>
+     <div class="price">面议</div>
+     <div class="clear line"></div>
+   </div>
+ 
+   <div class="slist_content">
+     <div class="db">&nbsp;<input name="c_accountid" type="checkbox" value="79986" /></div>
+     <div class="photo">&nbsp;<a href="http://79986.china-designer.com/" target="_blank" title="陈国园"><img src="http://img2.china-designer.com/vip/myphotos/small/200592904223.jpg" width="58" height="58" align="absmiddle" /></a></div>
+     <div class="content">
+      <h3><a href="http://79986.china-designer.com/" target="_blank">陈国园</a> </h3>
+      <p class="about">[室内设计师] 设计专长：
+      别墅</p>
+      <p class="about2">79986  陈国园 国园 我土生土长的东北人，耿直豪爽大气，愿意交朋友。认真细心负责！用心成就经典视觉。
+QQ:    ４３２１３０９
+Email: cgyes@126.com
+
+
+ 重庆玄龙数码图像设计有限公司 重庆室内设计师别墅...</p>
+      <p class="about3"><img src="/ezx/images/ico_mail.gif" width="16" height="16" align="absmiddle" /> <a href="/home/79986_5.htm" target="_blank">留言洽谈</a> <img src="/ezx/images/ico_tel.gif" width="17" height="17" align="absmiddle" /> <a href="/home/79986_1_1.htm" target="_blank">电话联系</a> <img src="/ezx/images/ico_ok.gif" width="22" height="15" /><a href="/owner/owners_ProjectAdd2.asp?accountid=&ToID=79986"  class="inviteDesign" target="_blank">委托设计</a></p>
+     </div>
+     <div class="work">26/0</div>
+     <div class="location">重庆
+	<script>document.write(GetCityName(4,474,document.cityname))</script> 
+	</div>
+     <div class="price">面议</div>
+     <div class="clear line"></div>
+   </div>
+ 
+   <div class="slist_content">
+     <div class="db">&nbsp;<input name="c_accountid" type="checkbox" value="159398" /></div>
+     <div class="photo">&nbsp;<a href="http://159398.china-designer.com/" target="_blank" title="彭永松"><img src="http://img2.china-designer.com/vip/myphotos_new/001/small/2007119224252159398.jpg" width="58" height="58" align="absmiddle" /></a></div>
+     <div class="content">
+      <h3><a href="http://159398.china-designer.com/" target="_blank">彭永松</a> </h3>
+      <p class="about">[室内设计师] 设计专长：
+      住宅公寓</p>
+      <p class="about2">159398  彭永松 0 创意点亮生活 0 重庆室内设计师住宅公寓...</p>
+      <p class="about3"><img src="/ezx/images/ico_mail.gif" width="16" height="16" align="absmiddle" /> <a href="/home/159398_5.htm" target="_blank">留言洽谈</a> <img src="/ezx/images/ico_tel.gif" width="17" height="17" align="absmiddle" /> <a href="/home/159398_1_1.htm" target="_blank">电话联系</a> <img src="/ezx/images/ico_ok.gif" width="22" height="15" /><a href="/owner/owners_ProjectAdd2.asp?accountid=&ToID=159398"  class="inviteDesign" target="_blank">委托设计</a></p>
+     </div>
+     <div class="work">16/1</div>
+     <div class="location">重庆
+	<script>document.write(GetCityName(4,471,document.cityname))</script> 
+	</div>
+     <div class="price">面议</div>
+     <div class="clear line"></div>
+   </div>
+ 
+   <div class="slist_content">
+     <div class="db">&nbsp;<input name="c_accountid" type="checkbox" value="339770" /></div>
+     <div class="photo">&nbsp;<a href="http://339770.china-designer.com/" target="_blank" title="屈仁强"><img src="http://img2.china-designer.com/vip/myphotos_new/028/small/2011724165133339770.jpg" width="58" height="58" align="absmiddle" /></a></div>
+     <div class="content">
+      <h3><a href="http://339770.china-designer.com/" target="_blank">屈仁强</a> </h3>
+      <p class="about">[室内设计师] 设计专长：
+      别墅</p>
+      <p class="about2">339770  屈仁强 屈工 09年毕业于重庆建筑学院，从业设计10余年，风格各亦。设计热线：13657649848   QQ：752990511 重庆屈氏设计事务所 重庆室内设计师别墅...</p>
+      <p class="about3"><img src="/ezx/images/ico_mail.gif" width="16" height="16" align="absmiddle" /> <a href="/home/339770_5.htm" target="_blank">留言洽谈</a> <img src="/ezx/images/ico_tel.gif" width="17" height="17" align="absmiddle" /> <a href="/home/339770_1_1.htm" target="_blank">电话联系</a> <img src="/ezx/images/ico_ok.gif" width="22" height="15" /><a href="/owner/owners_ProjectAdd2.asp?accountid=&ToID=339770"  class="inviteDesign" target="_blank">委托设计</a></p>
+     </div>
+     <div class="work">44/0</div>
+     <div class="location">重庆
+	<script>document.write(GetCityName(4,473,document.cityname))</script> 
+	</div>
+     <div class="price">50-100</div>
+     <div class="clear line"></div>
+   </div>
+
+
+  </div>
+
+</div>
+
+  <div class="pageinfo">
+     <div class="db">
+       <input type="button" value="对比设计师" onclick="duibiit('c_accountid');" />
+       <input type="button" value="邀请设计师" onclick="Invited('c_accountid');" />
+     </div>
+     <div class="pgcount">共有2634条记录，第17/220页</div>
+     <div class="pages">
+	<A href="?keywords=&mainbest=0&designerclassid=-1&location=4&sel_city=0&job=2&charges=0&PageSize=12&vType=2&birthday1=0&birthday2=0&PageNO=1">首页</a>&nbsp;<A href="?keywords=&mainbest=0&designerclassid=-1&location=4&sel_city=0&job=2&charges=0&PageSize=12&vType=2&birthday1=0&birthday2=0&PageNO=16">上一页</a> 
+	&nbsp;<A href=?keywords=&mainbest=0&designerclassid=-1&location=4&sel_city=0&job=2&charges=0&PageSize=12&vType=2&birthday1=0&birthday2=0&AccountID=&PageNO=13>13</a>&nbsp;<A href=?keywords=&mainbest=0&designerclassid=-1&location=4&sel_city=0&job=2&charges=0&PageSize=12&vType=2&birthday1=0&birthday2=0&AccountID=&PageNO=14>14</a>&nbsp;<A href=?keywords=&mainbest=0&designerclassid=-1&location=4&sel_city=0&job=2&charges=0&PageSize=12&vType=2&birthday1=0&birthday2=0&AccountID=&PageNO=15>15</a>&nbsp;<A href=?keywords=&mainbest=0&designerclassid=-1&location=4&sel_city=0&job=2&charges=0&PageSize=12&vType=2&birthday1=0&birthday2=0&AccountID=&PageNO=16>16</a>&nbsp;<font color=red>17</font>&nbsp;<A href=?keywords=&mainbest=0&designerclassid=-1&location=4&sel_city=0&job=2&charges=0&PageSize=12&vType=2&birthday1=0&birthday2=0&AccountID=&PageNO=18>18</a>&nbsp;<A href=?keywords=&mainbest=0&designerclassid=-1&location=4&sel_city=0&job=2&charges=0&PageSize=12&vType=2&birthday1=0&birthday2=0&AccountID=&PageNO=19>19</a>&nbsp;<A href=?keywords=&mainbest=0&designerclassid=-1&location=4&sel_city=0&job=2&charges=0&PageSize=12&vType=2&birthday1=0&birthday2=0&AccountID=&PageNO=20>20</a>&nbsp;<A href=?keywords=&mainbest=0&designerclassid=-1&location=4&sel_city=0&job=2&charges=0&PageSize=12&vType=2&birthday1=0&birthday2=0&AccountID=&PageNO=21>21</a>
+	<A href="?keywords=&mainbest=0&designerclassid=-1&location=4&sel_city=0&job=2&charges=0&PageSize=12&vType=2&birthday1=0&birthday2=0&PageNO=18">下一页</a>&nbsp;<A href="?keywords=&mainbest=0&designerclassid=-1&location=4&sel_city=0&job=2&charges=0&PageSize=12&vType=2&birthday1=0&birthday2=0&PageNO=220">末页</a> 
+	 　转到
+       <select name="select4" id="select4" onchange="location.href='?keywords=&mainbest=0&designerclassid=-1&location=4&sel_city=0&job=2&charges=0&PageSize=12&vType=2&birthday1=0&birthday2=0&PageNO='+this.value">
+        <option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17" selected="selected">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option><option value="32">32</option><option value="33">33</option><option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option><option value="45">45</option><option value="46">46</option><option value="47">47</option><option value="48">48</option><option value="49">49</option><option value="50">50</option><option value="51">51</option><option value="52">52</option><option value="53">53</option><option value="54">54</option><option value="55">55</option><option value="56">56</option><option value="57">57</option><option value="58">58</option><option value="59">59</option><option value="60">60</option><option value="61">61</option><option value="62">62</option><option value="63">63</option><option value="64">64</option><option value="65">65</option><option value="66">66</option><option value="67">67</option><option value="68">68</option><option value="69">69</option><option value="70">70</option><option value="71">71</option><option value="72">72</option><option value="73">73</option><option value="74">74</option><option value="75">75</option><option value="76">76</option><option value="77">77</option><option value="78">78</option><option value="79">79</option><option value="80">80</option><option value="81">81</option><option value="82">82</option><option value="83">83</option><option value="84">84</option><option value="85">85</option><option value="86">86</option><option value="87">87</option><option value="88">88</option><option value="89">89</option><option value="90">90</option><option value="91">91</option><option value="92">92</option><option value="93">93</option><option value="94">94</option><option value="95">95</option><option value="96">96</option><option value="97">97</option><option value="98">98</option><option value="99">99</option><option value="100">100</option><option value="101">101</option><option value="102">102</option><option value="103">103</option><option value="104">104</option><option value="105">105</option><option value="106">106</option><option value="107">107</option><option value="108">108</option><option value="109">109</option><option value="110">110</option><option value="111">111</option><option value="112">112</option><option value="113">113</option><option value="114">114</option><option value="115">115</option><option value="116">116</option><option value="117">117</option><option value="118">118</option><option value="119">119</option><option value="120">120</option><option value="121">121</option><option value="122">122</option><option value="123">123</option><option value="124">124</option><option value="125">125</option><option value="126">126</option><option value="127">127</option><option value="128">128</option><option value="129">129</option><option value="130">130</option><option value="131">131</option><option value="132">132</option><option value="133">133</option><option value="134">134</option><option value="135">135</option><option value="136">136</option><option value="137">137</option><option value="138">138</option><option value="139">139</option><option value="140">140</option><option value="141">141</option><option value="142">142</option><option value="143">143</option><option value="144">144</option><option value="145">145</option><option value="146">146</option><option value="147">147</option><option value="148">148</option><option value="149">149</option><option value="150">150</option><option value="151">151</option><option value="152">152</option><option value="153">153</option><option value="154">154</option><option value="155">155</option><option value="156">156</option><option value="157">157</option><option value="158">158</option><option value="159">159</option><option value="160">160</option><option value="161">161</option><option value="162">162</option><option value="163">163</option><option value="164">164</option><option value="165">165</option><option value="166">166</option><option value="167">167</option><option value="168">168</option><option value="169">169</option><option value="170">170</option><option value="171">171</option><option value="172">172</option><option value="173">173</option><option value="174">174</option><option value="175">175</option><option value="176">176</option><option value="177">177</option><option value="178">178</option><option value="179">179</option><option value="180">180</option><option value="181">181</option><option value="182">182</option><option value="183">183</option><option value="184">184</option><option value="185">185</option><option value="186">186</option><option value="187">187</option><option value="188">188</option><option value="189">189</option><option value="190">190</option><option value="191">191</option><option value="192">192</option><option value="193">193</option><option value="194">194</option><option value="195">195</option><option value="196">196</option><option value="197">197</option><option value="198">198</option><option value="199">199</option><option value="200">200</option><option value="201">201</option><option value="202">202</option><option value="203">203</option><option value="204">204</option><option value="205">205</option><option value="206">206</option><option value="207">207</option><option value="208">208</option><option value="209">209</option><option value="210">210</option><option value="211">211</option><option value="212">212</option><option value="213">213</option><option value="214">214</option><option value="215">215</option><option value="216">216</option><option value="217">217</option><option value="218">218</option><option value="219">219</option><option value="220">220</option>
+       </select>
+       页　
+
+  </div>
+  </div>
+ </div>
+<script language="javascript">
+function duibiit(str){
+	var j=0;
+	var idstr = "";
+	var objs = document.getElementsByName(str);
+	for(var i=0;i<objs.length;i++){
+		if(objs[i].checked){
+			idstr=idstr+objs[i].value+",";
+			j++;
+		}
+	}
+	if (j>5){
+		alert("最多只能选择5个设计师对比！");
+	}else if(j<2){
+		alert("至少选择两个设计师对比！");
+	}else{
+		window.open("/ezx/designer_duibi.asp?accountid="+idstr.substr(0,idstr.length-1));
+	}
+}
+function Invited(str){
+	var j=0;
+	var idstr = "";
+	var objs = document.getElementsByName(str);
+	for(var i=0;i<objs.length;i++){
+		if(objs[i].checked){
+			idstr=idstr+objs[i].value+",";
+			j++;
+		}
+	}
+	 if(j<1){
+		alert("请至少选择一个设计师！");
+	}else{
+		window.open("/owner/owners_ProjectAdd2.asp?accountid=&ToID="+idstr.substr(0,idstr.length-1));
+	}
+}
+</script>
+ <!--ad-->
+ <div class="r_content">
+ <div id="d_r_da"><a href="/company/designer_service6.asp" target="_blank"><img src="/ezx/images/tjd.gif" alt="申请推荐设计师限时优惠活动" /></a></div>
+
+   <div class="ad_box">
+     <h3><a href="http://www.sako.co.jp" target="_blank">Sako建筑设计</a></h3>
+     <p>Sako建筑设计工社</p>
+     <p class="url">www.sako.co.jp</p>
+   </div>
+    
+   <div class="ad_box">
+     <h3><a href="http://www.vickydesign.com/" target="_blank">厦门慧驰设计</a></h3>
+     <p>智慧创造空间，设计改变生活</p>
+     <p class="url">www.vickydesign.com/</p>
+   </div>
+    
+   <div class="ad_box">
+     <h3><a href="http://bj.dyrs.com.cn/" target="_blank">东易日盛</a></h3>
+     <p>中国驰名商标|家装行业领跑者</p>
+     <p class="url">bj.dyrs.com.cn/</p>
+   </div>
+    
+   <div class="ad_box">
+     <h3><a href="http://www.ch-sj.com.cn/" target="_blank">安徽承宏设计顾问有限公</a></h3>
+     <p>家装别墅设计|酒店宾馆设计</p>
+     <p class="url">www.ch-sj.com.cn/</p>
+   </div>
+    
+   <div class="ad_box">
+     <h3><a href="http://sarchdesignconsult.com/" target="_blank">上海可续建筑咨询</a></h3>
+     <p>上海可续建筑咨询有限公司</p>
+     <p class="url">sarchdesignconsult.c</p>
+   </div>
+    
+ </div>
+ 
+</div>
+<!--leftContent end-->
+<!--catelogBox start-->
+<div class="clear"></div>
+<div class="clear"></div>
+<div class="clear"></div>
+<!--catelogBox end-->
+<script type="text/javascript">
+//高亮关键字
+jQuery(function($){
+//	var regex = //ig;
+	var regex = new RegExp("","ig"); 
+//	var regex = /SOHO/ig;
+	$('#content_box').highlightRegex(regex);
+});
+
+</script>
+<br><br>
+<!--百度联盟广告--><center><script type="text/javascript">
+/*960*90，ezx底部，创建于2013-7-31*/
+var cpro_id = "u1332191";
+</script>
+<script src="http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script></center><!--百度联盟广告结束--><br>
+<div style="height:20px; clear:both;"></div>
+<hr />
+<div id="footer" class="c_box">
+<ul>
+<li><a href="/company/index.asp" target="_blank">关于我们</a></li>
+<li><a href="/subwebsite/clubweb/club_info1.asp?sonsite_id=1" target="_blank">关于协会</a></li>
+<li><a href="/material/bz/" target="_blank">选材通服务</a></li>
+<li><a href="/company/adservice1_1.asp" target="_blank">广告服务</a></li>
+<li><a href="/company/designer_service.asp" target="_blank">设计师服务</a></li>
+<li><a href="/owner/" target="_blank">业主服务</a></li>
+<li><a href="/company/about_job.asp" target="_blank">诚聘英才</a></li>
+<li><a href="/ezx/" target="_blank">易装修搜索</a></li>
+<li><a href="/company/about_tk.asp" target="_blank">使用协议</a></li>
+<li><a href="/company/contact.asp" target="_blank">联系我们</a></li>
+<li><a name="StranLink">繁体版</a></li>
+</ul>
+<div id="copyright">
+<dl>
+<dt><h3 class="aide">网站信息</h3></dt>
+<dd class="en">Copyright@2002-2013<a href="http://www.china-designer.com/index.asp">China-designer.com</a> All Rights Reserved</dd>
+<dd>版权所有 2002-<span class="en">2013</span> <a href="http://www.china-designer.com/index.asp">中国建筑与室内设计师网</a></dd>
+<dd>电话：010-58691861 传真：010-58694180</dd>
+<dd><a href="/company/licence.htm" target="_blank">京ICP证070338号</a>  <a href="/special/suggestionbox/idea.asp" target="_blank"><font color="#FF0000">建议箱</font></a> 
+
+<!--&nbsp;&nbsp;添加至QQ <script language="javascript" src="http://www.china-designer.com/da/qqdemo/addportal.js"></script>
+<script>AddPortal('37293','','','2.1'); </script> --></dd>
+<dd> <a href="http://www.hd315.gov.cn/beian/view.asp?bianhao=010202008032700005" target="_blank"><img src="/images/biaoshi.gif" border="0"/></a><a href="http://210.76.65.188/webrecord/innernet/Welcome.jsp?bano=4405013020501" target="_blank"><img src="/images/waicon.gif" width="35" height="41" border="0" /></a></dd>
+<dd><a style="color:#FFFFFF" href="/sitemap.htm" target="_blank">网站地图</a> <font color="#FFFFFF">2013-9-20 23:34:21</font></dd>
+</dl>
+</div>
+</div>
+ <!--Google 统计 -->
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script> <script type="text/javascript">
+_uacct = "UA-2852660-1";
+urchinTracker();
+</script>
+<script language="JavaScript" src="/js/JF.js" type="text/javascript"></script>
+
+<!--hello-->
+</body>
+</html>

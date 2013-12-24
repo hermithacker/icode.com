@@ -1,0 +1,81 @@
+<table border="1" width="100%" cellspacing="0" style="border-collapse: collapse" bordercolor="#C0C0C0" height="700">
+	<tr>
+		<td valign="top" height="649"><table style="BORDER-COLLAPSE: collapse" borderColor="#c0c0c0" cellPadding="0" width="100%" border="1" height="63">
+		<form method="POST" action="aa_replace.php?pregs=nz">
+		<tr>
+				<td bgColor="#636194" width="770" colspan="2" height="25">	
+				<p dir="ltr"><font color="#F7F7F7">使用内置正则</font></td>
+		</tr>
+				
+				<tr>
+					
+					<td width="80%" bgColor="#efefef" height="280">
+					<p>
+									&nbsp;替换范围：采集器 <select name="rules">
+									<option value="">全部采集器</option>
+									<!-- BEGIN list --> 
+									<option value="{rule_id}" >{rule_name}</option>									
+									<!-- END list --> 
+									</select>
+					<p dir="ltr">&nbsp; 将&nbsp;<textarea rows="5" cols="60" name="patterns"></textarea>&nbsp; 
+					使用标签代替正则 用法与采集规则一样 可用标签 ：[任何字符] [不含&lt;&gt;] (特殊字符不需要加上\)<p>&nbsp; 替换成&nbsp;<textarea rows="5" cols="60" name="replacement"></textarea>&nbsp;<p dir="ltr">&nbsp; 
+					修饰符 <input type="text" name="xius" size="5">&nbsp; 输入&nbsp; 
+					&quot; i &quot; 将替代匹配大小写字母&nbsp; 输入&nbsp; &quot; s &quot; 将替代包括换行在</td>
+				</tr>
+				
+	<tr>
+		<td width="770" colspan="2">　
+		<input class="button" type="submit" value="开始替换"></td>	
+	</tr>
+
+			</table>
+			</form>
+			<p dir="ltr">　</p>
+			
+			
+			<table style="BORDER-COLLAPSE: collapse" borderColor="#c0c0c0" cellPadding="0" width="100%" border="1" height="63">
+		<form method="POST" action="aa_replace.php?pregs=zj">
+		<tr>
+				<td bgColor="#636194" width="770" colspan="2" height="25">	
+				<p dir="ltr"><font color="#F7F7F7">使用正则</font></td>
+		</tr>
+				
+				<tr>
+									<td width="80%" bgColor="#efefef" height="220">
+					<p>
+									&nbsp;替换范围：采集器 <select name="rules">
+									<option value="">全部采集器</option>
+									<!-- BEGIN list --> 
+									<option value="{rule_id}" >{rule_name}</option>									
+									<!-- END list --> 
+									</select>
+					<p dir="ltr">&nbsp;&nbsp; 将&nbsp;<textarea rows="5" cols="60" name="patterns"></textarea>&nbsp; 
+					请输入Perl 兼容正则表达式函数 例 /&lt;[^&lt;]+&gt;/ 替代所有HTML标签(要输入包括给特殊字符加上\ 的正规 
+					正则式)<p>&nbsp; 替换成&nbsp;<textarea rows="5" cols="60" name="replacement"></textarea>&nbsp;(特殊字符不需要加上\)</td>
+				</tr>
+				
+	<tr>
+		<td width="770" colspan="2">　
+		<input class="button" type="submit" value="开始替换"></td>	
+	</tr>
+
+			</table>
+			</form>
+		
+		
+		</td>
+	</tr>
+	
+			<tr>
+			<td valign="top">
+			
+							<p dir="ltr">注意：这个功能是为了删除广告所设 第二种替代请会使用正则的才使用&nbsp; <br>使用内置正则的标签 [任何字符] [不含&lt;&gt;] 和采集规则标签 [内容] [标题] 等类似<br><br>　</td>
+		</tr>
+</table>
+
+
+
+
+
+
+	

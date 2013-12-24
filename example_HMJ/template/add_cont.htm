@@ -1,0 +1,61 @@
+	<table border="1" width="100%" bordercolor="#C0C0C0" cellspacing="0" style="border-collapse: collapse">
+		<tr>
+			<td>
+			
+							<form method="post" action="index.php?work=work">
+							<center>
+							<table style="BORDER-COLLAPSE: collapse" cellSpacing="0" cellPadding="0" width="100%" border="0">
+								<tr>
+									<td style="BORDER-RIGHT: #cccccc 1px solid; BORDER-TOP: #cccccc 1px solid; BORDER-LEFT: #cccccc 1px solid; BORDER-BOTTOM: #cccccc 1px solid" width="40%" bgColor="#f7f7f7" height="30">
+									<center>采集范围</center></td>
+									<td style="BORDER-RIGHT: #cccccc 1px solid; BORDER-TOP: #cccccc 1px solid; BORDER-LEFT: #cccccc 1px solid; BORDER-BOTTOM: #cccccc 1px solid">
+									&nbsp; <select name="rules">
+									<option value="">请选择一个</option>
+									<!-- BEGIN list --> 
+									<option value="{rule_id}" {selected}>{rule_name}</option>									
+									<!-- END list --> 
+									</select></td>
+								</tr>
+								<tr>
+									<td style="BORDER-RIGHT: #cccccc 1px solid; BORDER-TOP: #cccccc 1px solid; BORDER-LEFT: #cccccc 1px solid; BORDER-BOTTOM: #cccccc 1px solid" bgColor="#f7f7f7" height="30">
+									<center>采集范围</center></td>
+									<td style="BORDER-RIGHT: #cccccc 1px solid; BORDER-TOP: #cccccc 1px solid; BORDER-LEFT: #cccccc 1px solid; BORDER-BOTTOM: #cccccc 1px solid">
+									&nbsp;&nbsp;<input class="button" size="5" name="total"> 
+									条 (留空表示采集全部连接)</td>
+								</tr>
+								<tr>
+									<td style="BORDER-RIGHT: #cccccc 1px solid; BORDER-TOP: #cccccc 1px solid; BORDER-LEFT: #cccccc 1px solid; BORDER-BOTTOM: #cccccc 1px solid" bgColor="#f7f7f7" height="30">
+									<center>采集线程</center></td>
+									<td style="BORDER-RIGHT: #cccccc 1px solid; BORDER-TOP: #cccccc 1px solid; BORDER-LEFT: #cccccc 1px solid; BORDER-BOTTOM: #cccccc 1px solid">
+									&nbsp;&nbsp;<input class="button" size="5" value="5" name="num"> 
+									条 (推荐5-25之间，根据CPU性能决定)</td>
+								</tr>
+								
+																<tr>
+									<td style="BORDER-RIGHT: #cccccc 1px solid; BORDER-TOP: #cccccc 1px solid; BORDER-LEFT: #cccccc 1px solid; BORDER-BOTTOM: #cccccc 1px solid" bgColor="#f7f7f7" height="30">
+									<center>
+									<p dir="ltr">每次采集</p>
+									</center></td>
+									<td style="BORDER-RIGHT: #cccccc 1px solid; BORDER-TOP: #cccccc 1px solid; BORDER-LEFT: #cccccc 1px solid; BORDER-BOTTOM: #cccccc 1px solid">
+									&nbsp;&nbsp;<input class="button" size="5" value="5" name="hangshu"> 
+									条 (单页推荐5-25之间，多页2-10之间，注：上下页无法设定 默认为1)</td>
+								</tr>
+								
+								<tr>
+									<td style="BORDER-RIGHT: #cccccc 1px solid; BORDER-TOP: #cccccc 1px solid; BORDER-LEFT: #cccccc 1px solid; BORDER-BOTTOM: #cccccc 1px solid" bgColor="#f7f7f7" height="30">
+									<center>采集顺序</center></td>
+									<td style="BORDER-RIGHT: #cccccc 1px solid; BORDER-TOP: #cccccc 1px solid; BORDER-LEFT: #cccccc 1px solid; BORDER-BOTTOM: #cccccc 1px solid">
+									&nbsp;&nbsp;<input type="radio" name="radio" value="1">&nbsp;从新到旧&nbsp;&nbsp;<input type="radio" name="radio" value="2">&nbsp;从旧到新</td>
+								</tr>
+								<tr>
+									<td style="BORDER-RIGHT: #cccccc 1px solid; BORDER-TOP: #cccccc 1px solid; BORDER-LEFT: #cccccc 1px solid; BORDER-BOTTOM: #cccccc 1px solid" align="right" bgColor="#f7f7f7" colSpan="2" height="30">
+									<input class="button" type="submit" value="开始采集">&nbsp;&nbsp;</td>
+								</tr>
+							</table>
+							</center>
+						</form></td>
+		</tr>
+</table>
+
+
+	

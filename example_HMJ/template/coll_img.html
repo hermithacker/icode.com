@@ -1,0 +1,163 @@
+<script>
+
+function showObj(objID, action)
+{
+	var obj = document.getElementById(objID);
+	action = (action == "show") ? "block" : "none";
+	obj.style.display = action;
+}
+
+function markimage()
+{
+	showObj('mark_image', 'show');
+	showObj('mark_text', 'hide');
+}
+
+function marktext()
+{
+	showObj('mark_text', 'show');
+	showObj('mark_image', 'hide');
+}
+
+</script>
+			<form  method="post" action="index.php?work=img_work">
+			<center>
+                    <table width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse">
+						<tr>
+								<td height="25" background="images/tb_background.gif" colspan="2">&nbsp;&nbsp;<font color="#FFFFFF">图片采集</font></td>
+						</tr>
+						<tr> 
+						 <td height="30" bgcolor="#F7F7F7" style="border: 1px solid #CCCCCC" width="22%"> 
+                          <center>
+                            采集范围 
+                          </center>
+                        </td>
+                        <td style="border: 1px solid #CCCCCC" width="77%">&nbsp;
+                        <select name="rules">
+									<option value=0>全部采集</option>
+									<!-- BEGIN list --> 
+									<option value="{rule_id}" >{rule_name}</option>									
+									<!-- END list --> 
+									</select>
+                        </td>
+                      </tr>
+                      <tr> 
+                        <td height="30" bgcolor="#F7F7F7" style="border: 1px solid #CCCCCC" align="center" width="22%">保存路径</td>
+                        <td style="border: 1px solid #CCCCCC" width="77%">&nbsp; 
+                          <input type="text" name="paths" id="path" class="button" size="40"> 
+						请输入完整路径 遵循正规目录地址 
+						<br>比如： 目录在采集器目录 为 img/ 在空间目录为 ../img/ 并且设目录为可写(0777)</td>
+                      </tr>
+                      <tr> 
+                        <td height="30" bgcolor="#F7F7F7" style="border: 1px solid #CCCCCC" width="22%"> 
+                          <center>
+                            采集范围 
+                          </center>
+                        </td>
+                        <td style="border: 1px solid #CCCCCC" width="77%">&nbsp; 
+                          <input type="text" name="total" size="5" class="button">
+                          条 (留空表示采集全部连接)</td>
+                      </tr>
+                      <tr> 
+                        <td height="30" bgcolor="#F7F7F7" style="border: 1px solid #CCCCCC" width="22%"> 
+                          <center>
+                            <p dir="ltr">采集线程 </p>
+                          </center>
+                        </td>
+                        <td style="border: 1px solid #CCCCCC" height="30" width="77%">&nbsp; 
+                          <input type="text" name="xiancheng" size="5" value="5" class="button">
+                          条 (推荐2-10条根据CPU性能决定)</td>
+                      </tr>
+                      
+                                            <tr> 
+                        <td height="30" bgcolor="#F7F7F7" style="border: 1px solid #CCCCCC" width="22%"> 
+                          <center>
+                            <p dir="ltr">每条采集图片数</p>
+                          </center>
+                        </td>
+                        <td style="border: 1px solid #CCCCCC" height="30" width="77%">
+						<p dir="ltr">&nbsp; 
+                          <input type="text" name="shuliang" size="5" class="button">
+                          张 (比如一篇文章 10张图 你只想要下一张 那填1 留空为全部)</td>
+                      </tr>
+                      
+                      <tr> 
+                        <td height="30" bgcolor="#F7F7F7" style="border: 1px solid #CCCCCC" align="center">图片水印
+						</td>
+                        <td height="30" style="border: 1px solid #CCCCCC"> 
+                          <input type="radio" name="shuiyin" value="1" onclick="showObj('markall','show')">
+                          开启 
+                          <input type="radio" name="shuiyin" value="0" checked onclick="showObj('markall','hide')">
+                          关闭 </td>
+                      </tr>
+                      <tr id="markall" style="display:none"> 
+                        <td height="30" bgcolor="#F7F7F7" style="border: 1px solid #CCCCCC" align="center">水印类型</td>
+                        <td height="30" style="border: 1px solid #CCCCCC"> 
+                          <input type="radio" name="shuiyintype" value="text" checked onclick="marktext()">
+                          文字 
+                          <input type="radio" name="shuiyintype" value="img" onclick="markimage()">
+                          图片 <br>
+                          <table width="100%" border="0" id="mark_text" style="display:block">
+                            <tr> 
+                              <td width="300"> 
+                                <p>文字内容</p>
+                              </td>
+                              <td width="76%"> 
+                                <p dir="ltr"> 
+                                <input type="text" name="shuiyin_connt" class="button" size="40">&nbsp;
+                              	<br>不支持中文，想支持中文 请上传中文字体覆盖目录下ziti.ttf 
+								设文件名为ziti.ttf</td>
+                            </tr>
+                            <tr> 
+                              <td width="300">字体透明度</td>
+                              <td> 
+                                <input type="text" name="shuiyin_zitouming" size="5" value="0" class="button">
+                                %&nbsp; 0为不透明</td>
+                            </tr>
+                                                        <tr> 
+                              <td width="300">字体背景透明度</td>
+                              <td> 
+                                <input type="text" name="shuiyin_zibytouming" size="5" value="70" class="button">
+                                %&nbsp; 100为完全透明</td>
+                            </tr>
+                                                                                    <tr> 
+                              <td width="300">
+								<p dir="ltr">字体颜色</td>
+                              <td> 
+                                <input type="text" name="shuiyin_zicolor" size="6" value="000000" class="button">
+                                % 16位</td>
+                            </tr>
+                            <tr> 
+                              <td width="300">字体大小</td>
+                              <td> 
+                                <input type="text" name="shuiyin_fonts" size="5" value="12" class="button">
+                                px </td>
+                            </tr>
+                          </table>
+                          <table width="100%" border="0" id="mark_image" style="display:none">
+                            <tr> 
+                              <td width="300"> 
+                                <p>水印图片</p>
+                              </td>
+                              <td width="77%"> 
+								<input type="text" name="shuiyin_image" class="button" size="40"> 
+								请输入完整路径 遵循正规目录地址 
+						<br>比如： 目录在采集器目录 为 img/xxx.jpg 在空间目录为 ../img/xxx.jpg</td>
+                            </tr>
+                            <tr> 
+                              <td width="300">水印透明度</td>
+                              <td> 
+                                <input type="text" name="shuiyin_imgtouming" size="5" value="80" class="button">
+                                %&nbsp;&nbsp; 注意 与字体相反 100%为不透明 0%就是不显示水印</td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                      <tr> 
+                        <td height="30" bgcolor="#F7F7F7" style="border: 1px solid #CCCCCC" colspan="2" align="right"> 
+                          <input type="submit" value="开始采集" class="button">&nbsp;&nbsp;
+                        </td>
+                      </tr>
+                    </table>
+						</center>
+			</form>
