@@ -43,7 +43,7 @@ class mysql{
     -- 实  例：无
     *******************************************************************/
     public function __construct($host,$user,$pass,$data,$code='utf8',$conn=0){
-        $this->host=$host;
+	  $this->host=$host;
         $this->user=$user;
         $this->pass=$pass;
         $this->data=$data;
@@ -702,9 +702,6 @@ class mysql{
             return false;
         }
     }
-
-
-
 
 
 
