@@ -8,22 +8,21 @@
 	<BODY>
 		<H1> I WANT TO GET DATAS! </H1>
 		<FORM>
-			<INPUT id='txt_webSite' type='text' value ='Please Input Website:www.songsongni.com' style="width:500px;" autofocus required/>
+			<INPUT id='txt_webSite' type='text' value ='www.china-designer.com/  ' style="width:500px;" autofocus required/>
 			<INPUT type='button' value='submit' onClick='getData();' style="width:100px;" />
 		</FORM>
 	<!--post提交数据的方式-->
 	<script>
 
 	function getData(){
-		$.ajax({
-			type:"post",
-			url: "inputCheck.php",
-			data:"inputUrl="+$("#txt_webSite").val(),
-			success: function(msg){
-
-		   }
-		});
+		param = checkVail($("#txt_webSite").val());
+		window.location.href("index.php?param="+param);
 	};
+
+	function checkVail(str){
+		strValue = encodeURI(str);
+		return strValue;
+	}
 	</script>
 	</BODY>
 </HTML>

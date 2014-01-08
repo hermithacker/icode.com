@@ -722,8 +722,9 @@ function get_m_info($url){
 	$ugs->noReturn();
 	$ugs->cut('<div class="modulecontent">','<center>');
 	$content = $ugs->value_;
+	//将字符串 content 从 gb2312 转换编码到 UTF-8
 	$content = iconv("gb2312","UTF-8",$content);
-	//echo $content;exit;
+	//测试: echo $content;exit;
 	$member_info = array();
 	preg_match_all('/<td[^>]*>(.*)<\\/td>/U',$content,$reg);//获取会员资料
 	preg_match_all('/<img src=\"(.*?)\" title=\".*?\" id=\"PreviewImagesReplace\"/is',$content,$regimg);//获取图片头像
@@ -775,12 +776,19 @@ function GrabImage($url,$filename="") {
 	fclose($fp2);
 	return $filename;
 }
-/*抓取产品原图*/
+
+/*
+**功能:抓取原图到本地
+**
+**
+**格式限制:.gif/.jpg/.png/.bmp
+*/
 function get_original_image($url,$filename="") {
 //	set_time_limit(24 * 60 * 60 * 60);//php set_time_limit函数的功能是设置当前页面执行多长时间不过期哦。
 	if($url==""):return false;endif;
 	$url = preg_replace('/ /','%20',$url);
-	if($filename == "" ){//如果未指定图片名字（包括图片存储路径）
+	//如果未指定图片名字（包括图片存储路径）
+	if($filename == "" ){
 		$ext=strrchr($url,".");
 		if($ext!=".gif" && $ext!=".jpg" && $ext!=".png" && $ext!=".bmp"):return false;endif;
 		$filename='images/pro_img/'.date("dMYHis").$ext;

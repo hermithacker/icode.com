@@ -38,8 +38,8 @@ class ugs {
 			$path = "/";
 		if ($url_parsed["query"] != "")
 			$path .= "?" . $url_parsed["query"];
-		$out = "GET $path HTTP/1.0\r\nHost: $host\r\n\r\n";
-		$fp = @fsockopen($host, $port, $errno, $errstr, 30);
+		$out = "GET $path HTTP/1.1\r\nHost: $host\r\n\r\n";
+		$fp = @fsockopen($host, $port, $errno, $errstr, 100);
 		if($fp){//如果sock连接成功
 			fwrite($fp, $out);
 			$body = false;
@@ -56,8 +56,8 @@ class ugs {
 			echo "$errstr ($errno)<br />\n";
 			return false;
 		}
-		
 	}
+
 	function getfile_curl($url) {//curl的详细说明，见后面的备注
 		$curl = "/usr/local/bin/curl "; // path to your curl
 		$curl_options = " -s --connect-timeout 10 --max-time 10 ";
@@ -205,13 +205,17 @@ class ugs {
 		fclose($fp2);
 		return $filename;
 	} 
-	
-	
 }
 
-
-
-
+/*  测试代码
+$ugs = new ugs();
+$url = "http://www.songsongni.com/";
+$ugs->seturl($url);
+$ugs->gather();
+//............这里可以调用本类里的其它方法，对$ugs->value_ 做调整,以满足您的要求
+$content=$ugs->getcontent();
+echo $content;
+*/
 /*备注 curl函数详细说明*/
 /*
 PHP 支持curl函数(允许你用不同的协议连接和沟通不同的服务器). curl

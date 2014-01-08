@@ -6,7 +6,7 @@
 * By Laurence Chen 2013年11月27日
 *
 */
-	class Url{
+	class url{
 		private  $content;  //网站内容
 		private  $url ;		//网站地址
 
@@ -20,27 +20,22 @@
 		*/
 		function getFileContent($url){
 			$url_parsed = parse_url($url);
-			$host = "";
-			$port = 0;
-			$path = "";
-			if(array_key_exists("host",$url_parsed)){
-				$host = $url_parsed["host"];
-			}
-			if(array_key_exists("port",$url_parsed)){
-				$port = $url_parsed["port"];
-			}else{
+			var_dump($url_parsed);
+			$host = $url_parsed["host"];
+			$port = $url_parsed["port"];
+			if($port==0){
 				$port = 80;
 			}
-			if(array_key_exists("path",$url_parsed)){
-				$path = $url_parsed["path"];
-			}else{
+			$path = $url_parsed["path"];
+			if(empty($path)){
 				$path = "/";
 			}
-			if(array_key_exists("query",$url_parsed)){
+			if($url_parsed["query"]!=""){
 				$path .= "?" . $url_parsed["query"];
 			}
+			
 			//拼接的请求头
-			$out = "GET $path HTTP/1.0\r\nHost: $host\r\n\r\n";
+			$out = "GET $path HTTP/1.1 \r\n Host: $host \r\n\r\n";
 			$fp = @fsockopen($host, $port, $errno, $errstr, 30);
 			if($fp){
 				//如果sock连接成功
@@ -76,12 +71,12 @@
 		
 		/**
 		*函数：gather()
-		*功能：开始收集制定路径的内容
+		*功能：开始收集指定路径的内容
 		*返回：路径文件的内容
 		*2013年11月27日
 		*/
 		function gather() {
-			$http =$this->getFileContent($this->url);
+			$http = $this->getFileContent($this->url);
 			return $this->content=$http;
 		}
 
@@ -124,7 +119,7 @@
 		* echo $url->cut("(",")",2);
 		* 结果：piece2
 		*/
-		function cut($start, $end, $no = '1', $comprise = '') {
+		function cut($start, $end, $no=1, $comprise = '') {
 			$string = explode($start, $this->content);
 			$string = explode($end, $string[$no]);
 			switch ($comprise) {
@@ -226,7 +221,7 @@
 			return $filename;
 		} 
 	
-	//-------------------------------------------------------------//
+		//-------------------------------------------------------------//
 		/**
 		 * 获取网站地址
 		 * @return the $content
@@ -264,15 +259,57 @@
 			$tempstr = "<SCRIPT>function runEx(){var winEx2 = window.open(\"\", \"winEx2\", \"width=500,height=300,status=yes,menubar=no,scrollbars=yes,resizable=yes\"); winEx2.document.open(\"text/html\", \"replace\"); winEx2.document.write(unescape(event.srcElement.parentElement.children[0].value)); winEx2.document.close(); }function saveFile(){var win=window.open('','','top=10000,left=10000');win.document.write(document.all.asdf.innerText);win.document.execCommand('SaveAs','','javascript.htm');win.close();}</SCRIPT><center><TEXTAREA id=asdf name=textfield rows=32 wrap=VIRTUAL cols=\"120\">" . $this->content . "</TEXTAREA><BR><BR><INPUT name=Button onclick=runEx() type=button value=\"查看效果\"> <INPUT name=Button onclick=asdf.select() type=button value=\"全选\"> <INPUT name=Button onclick=\"asdf.value=''\" type=button value=\"清空\"> <INPUT onclick=saveFile(); type=button value=\"保存代码\"></center>";
 			echo $tempstr;
 		}
+
+	function gather_test() {
+			$http = $this->getfile($this->url);
+			return $this->content=$http;
+		}
+		// 获取目标
+	function getfile($url) {
+		$url_parsed = parse_url($url);
+		$host = $url_parsed["host"];
+		$port = $url_parsed["port"];
+		if ($port == 0)
+			$port = 80;
+		$path = $url_parsed["path"];
+		if (empty ($path))
+			$path = "/";
+		if ($url_parsed["query"] != "")
+			$path .= "?" . $url_parsed["query"];
+		$out = "GET $path HTTP/1.1\r\nHost: $host\r\n\r\n";
+		$fp = @fsockopen($host, $port, $errno, $errstr, 100);
+		if($fp){//如果sock连接成功
+			fwrite($fp, $out);
+			$body = false;
+			while (!feof($fp)) {
+				$s = fgets($fp, 1024);
+				if ($body)
+					$in .= $s;
+				if ($s == "\r\n")
+					$body = true;
+			}
+			fclose($fp);
+			return $in;
+		}else{//否则输出错误
+			echo "$errstr ($errno)<br />\n";
+			return false;
+		}
+	}
 }
 
+
 /**测试类的脚本代码
-	//$url = new Url();
-	//$url->setUrl("http://blog.jobbole.com");
+	$_url = new url();
+	$_url->setUrl("http://www.songsongni.com/");
+	$_url->gather_test();
+	$content=$_url->getContent();
+	echo $content;
+
+
 	//echo $url->gather();  //这就是内容
 	//$url->GrabImage("http://cdn2.jobbole.com/2011/11/Web-Coding.png","");
 	//function sub_str($text,$length,$other_str=false)
-	
+
 	//echo $url->sub_str("这就是一个坑，需要转化asbcdde",8);
 	//$url->setUrl("http://blog.jobbole.com");
 	//$url->gather();  //这就是内容

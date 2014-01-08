@@ -1,4 +1,0 @@
-Content-Type: text/plain
-
-02/27/2006 09:21:10
-服务器错误: Windows SharePoint Services 网站中不包含 URL“C:\Documents and Settings\黄明江\桌面\hmjcj-1.1-php5\template\add_rules.htm”。
