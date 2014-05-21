@@ -1,0 +1,6 @@
+ 错误事件：SQL语句有误 
+错误原因：[1146]Table 'test.member' doesn't exist
+SQL语句：select memberid from member where loginname='yejunzhi'
+客户端 IP：127.0.0.1
+记录时间：2013-09-20 15:34:15
+
