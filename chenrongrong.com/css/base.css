@@ -1,0 +1,20 @@
+/* CSS Document */
+
+@charset "utf-8";
+
+
+.sr{float:right;}
+.sl{float:left;}
+
+.clear{clear:both;}
+*html .clear{height:1%;}
+.clear:after{content:".";display:block;height:0;clear:both;visibility:hidden;}
+
+a{border:0;blr:expression(this.onFocus=this.blur())}
+:focus{outline:0;}
+
+a,a:visited{color:#000;cursor:pointer;outline-width:medium;outline-style:none;outline-color:inherit;text-decoration:none;outline:none;}
+
+a:hover{text-decoration:none;color:#009f3c;}
+
+img{border:0px;vertical-align:middle;display:inline}

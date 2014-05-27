@@ -1,0 +1,5 @@
+ 错误事件：无法连接数据库
+错误原因：[1045]Access denied for user 'root'@'localhost' (using password: NO)
+客户端 IP：127.0.0.1
+记录时间：2014-03-19 20:57:57
+

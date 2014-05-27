@@ -1,0 +1,91 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="author" content="Ron Chen"/>
+<meta name="copyright" content="Ron Chen"/>
+<meta name="keywords" content="Git GitHub Guide Help">
+<meta name="title" content="Git Guide"/>
+<meta name="description" content="Git学习指导"/>
+<title>Git Guide</title>
+<link href="css/reset.css" rel="stylesheet" type="text/css" />
+<link href="css/base.css" rel="stylesheet" type="text/css" />
+<link href="css/gitGuide.css" rel="stylesheet" type="text/css" />
+<link href="css/plugin/sharebutton.css" rel="stylesheet" type="text/css" />
+
+</head>
+<body>
+<div class="content">
+	<div class="h">
+    	<div class="align">
+        	<h1>Git-学习指南</h1>
+            <p class="main-title">通过命令,案例说清楚Git的命令操作,助你快速使用Git!</p>
+            <p class="subtitle">学习新技术的乐趣,在于每一次努力都能快速获得一些新的成就.我能做到,你也可以,Fighting!</p>
+            <div class="share">
+               <a class="sh_baidu" title="分享到百度空间">&nbsp;</a>
+               <a class="sh_tqq" title="分享到腾讯微博">&nbsp;</a>
+               <a class="sh_tkj" title="分享到QQ空间">&nbsp;</a>
+               <a class="sh_sina" title="分享到新浪微博">&nbsp;</a>
+               <a class="sh_twx" title="分享到微信">&nbsp;</a>
+               <a class="sh_diandian" title="分享到点点博客">&nbsp;</a>
+               <a class="sh_renren" title="分享到人人主页">&nbsp;</a>
+               <a class="sh_more" title="分享更多">&nbsp;</a>
+            </div>
+            <div class="clear"></div>
+            <div class="author-info">
+                <div>作者: Ron Chen</div>
+                <div>更新于: 2014年5月21日 15:50</div>
+                <div>如有纰漏,欢迎留言指正</div>
+            </div>
+            <img src="images/arrow.png" alt="继续向下看"/>
+        </div>
+    </div>
+	<div class="code h">
+    	<div class="align">
+        	<section>
+            	<h1>名词解析</h1>
+                <p></p>
+            </section>
+            <section>
+            	<h3>提交</h3>
+                <p></p>
+                <h3>拉取</h3>
+                <p></p>
+            </section>
+            
+        </div>
+    </div>
+	<div class="reference h">
+    	<div class="align">3</div>
+    </div>
+</div>
+</body>
+<script>
+	function init(){
+		var  o = document.getElementsByClassName("h");
+		var  l = o.length;
+		var  h = window.screen.availHeight;
+		var w  = window.screen.availWidth;
+		for(var i=0;i<l;i++){
+			o[i].style.height= h+"px";
+			o[i].style.backgroundColor = getRandomColor();
+		}
+		var ol = document.getElementsByClassName("align");
+		var oll = ol.length;
+		for(var oi=0;oi<oll;oi++){
+			ol[oi].style.width = parseInt(w*0.8)+"px";
+			ol[oi].style.margin = "0 auto";
+		}
+	}
+	
+	/*随机生成颜色*/
+	var getRandomColor = function(){
+	  return  '#' +
+		(function(color){   
+			return (color +=  '0123456789abcdef'[Math.floor(Math.random()*16)])   
+			  && (color.length == 6) ?  color : arguments.callee(color);   
+	  	})('');   
+	} 
+	window.onload = init;
+</script>

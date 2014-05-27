@@ -1,0 +1,40 @@
+/*
+	圆形按钮
+*/
+.roundbuttons{
+	height:80px;
+}
+
+.roundbuttons .rb-area{
+	width:600px;
+	margin:0 auto;
+}
+.roundbuttons .rb-area > a{
+	display:block;
+	float:left;
+	width:70px;
+	height:66px;
+	margin:10px 20px;
+}
+
+.roundbuttons .rb-area > a{
+	cursor:pointer;
+}
+.roundbuttons a.rb-daily{
+	background:url(imgs/button.png) no-repeat scroll left top transparent;
+}
+.roundbuttons a.rb-signin{
+	background:url(imgs/button.png) no-repeat scroll -70px top transparent;
+}
+.roundbuttons a.rb-mood{
+	background:url(imgs/button.png) no-repeat scroll -138px top transparent;
+}
+.roundbuttons a.rb-notes{
+	background:url(imgs/button.png) no-repeat scroll left top transparent;
+}
+.roundbuttons a.rb-more{
+	background:url(imgs/button.png) no-repeat scroll left -66px transparent;
+}
+
+
+

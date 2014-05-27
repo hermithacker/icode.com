@@ -1,0 +1,6 @@
+ 错误事件：SQL语句有误,执行失败
+错误原因：[0]
+错误的SQL语句：SELECT loginname FROM test.memberes;
+客户端 IP：127.0.0.1
+记录时间：2014-03-14 09:39:16
+

@@ -1,0 +1,44 @@
+/*
+	分享按钮
+--------------------------- */
+.share{
+	float:left;
+	height:100px;
+	line-height:100px;
+	position:relative;
+	left:50%;
+}
+.share a{
+	display:block;
+	float:left;
+	margin-left:6px;
+	width:30px;
+	height:30px;
+	position:relative;
+	right:50%;
+}
+.share a.sh_baidu{
+	background:url('imgs/icon.png') no-repeat scroll left top transparent;
+}
+.share a.sh_tqq{
+	background:url('imgs/icon.png') no-repeat scroll -30px top transparent;
+}
+.share a.sh_tkj{
+	background:url('imgs/icon.png') no-repeat scroll -60px top transparent;
+}
+.share a.sh_sina{
+	background:url('imgs/icon.png') no-repeat scroll -90px top transparent;
+}
+.share a.sh_twx{
+	background:url('imgs/icon.png') no-repeat scroll -120px top transparent;
+}
+.share a.sh_diandian{
+	background:url('imgs/icon.png') no-repeat scroll -150px top transparent;
+}
+.share a.sh_renren{
+	background:url('imgs/icon.png') no-repeat scroll -180px top transparent;
+}
+.share a.sh_more{
+	background:url('imgs/icon.png') no-repeat scroll -210px top transparent;
+}
+

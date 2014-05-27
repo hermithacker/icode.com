@@ -1,0 +1,61 @@
+/* 
+	友情链接	
+*/
+
+/* Layout */
+.weblinks{
+	width:95%;
+	margin-bottom:10px;
+}
+
+/* 颜色 */
+	  /*  acer 官网颜色： rgb(131,185,65)	*/
+.weblinks{
+	border:5px solid #84BB44;
+}
+/*	样式*/
+.weblinks-head{
+	border:2px solid #84BB44;
+	background-color:#84BB44;
+}
+.weblinks ul li>a:hover,
+.weblinks ul li>a:active{
+	background-color:rgba(131,185,65,0.5);
+}
+
+
+/*	样式*/
+.weblinks-head{
+	text-align:left;
+	color:#fff;
+	font-size:1.2em;
+	font-weight:bold;
+	padding:10px 10px;
+}
+.weblinks ul{
+	background:none repeat scroll 0% 0% #FFF;
+}
+.weblinks ul li{
+	line-height:1.5em;
+	float:none;
+}
+.weblinks ul li>a{
+	border-bottom:1px solid #DDD;
+	border-radius:0px;
+}
+
+.weblinks-topic{
+	display:block;
+	padding:8px 12px;
+	line-height:1.5em;
+}
+.weblinks-topic img{
+	width:30px;
+	height:30px;
+	border-radius:50%;
+	margin-right:5px;
+	margin-bottom:5px;
+	vertical-align:middle;
+	border:0px none;
+}
+

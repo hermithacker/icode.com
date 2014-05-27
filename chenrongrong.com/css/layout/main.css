@@ -1,0 +1,27 @@
+/*
+	首页面的布局
+--------------------------*/
+
+.content{
+	width:960px;
+	margin:0 auto;
+}
+
+.content > .header{
+	height:40px;
+}
+
+.content > .middle{
+	margin-top:5px;
+}
+.content > .middle > .container{
+	width:75%;
+}
+.content > .middle > .tools{
+	width:24%;
+}
+
+.content > .footer{
+	margin-top:5px;
+	height:80px;
+}

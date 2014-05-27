@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<script type="text/javascript" src="js/jquery-1.10.2.js"></script>
+</head>
+<style>
+header.open,
+.content.open 
+{   
+    -webkit-transform: translate3d(240px,0,0);
+    -webkit-animation: open .5s ease-in-out;
+
+    -moz-transform: translate3d(240px,0,0);
+    -moz-animation: open .5s ease-in-out;
+
+    transform: translate3d(240px,0,0);
+    animation: open .5s ease-in-out;
+}
+</style>
+
+<body>
+<header class="open"></header>
+<div id="con" class="content" style="width:200px;height:200px;background:#0FF;">
+</div>
+</body>
+<script>
+	$("#con").mouseover(function(){
+			$(this).toggleClass("open");
+		});
+</script>
+</html>

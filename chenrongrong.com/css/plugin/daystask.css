@@ -1,0 +1,51 @@
+/*
+	每日任务
+*/
+
+/* 布局 */
+.daystask{
+	width:95%;
+	display:table;
+	margin-bottom:10px;
+}
+
+.daystask dt{
+	height:30px;
+	line-height:30px;
+	margin-bottom:2px;
+}
+.daystask dt > span{
+	margin-left:15px;
+	float:left;
+}
+.daystask dt > div{
+	width:16px;
+	height:30px;
+	margin-left:10px;
+	float:left;
+}
+.daystask dd{
+	height:30px;
+	line-height:30px;
+}
+
+/* 样式 */
+.daystask{
+	border:5px solid #84BB44;
+}
+.daystask .daystask-head{
+	background:none repeat scroll 0% 0% #84BB44;
+}
+.daystask .daystask-head .daystask-title{
+	font-size:14px;
+	font-weight:bold;
+	font-weight:bolder;
+	color:#fff;
+}
+.daystask .daystask-head .daystask-split{
+	background:url('imgs/basebg.png') no-repeat scroll -2px -2px transparent;
+}
+.daystask .daystask-content{
+	text-align:left;
+	border-bottom:1px solid #eee;
+}

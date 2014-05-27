@@ -1,0 +1,37 @@
+/* 
+	每日新闻
+*/
+
+.daysnews{
+	height:120px;
+	margin-bottom:10px;
+}
+.daysnews dl{
+	width:31%;
+	height:120px;
+	float:left;
+	margin-right:10px;
+}
+.daysnews dt{
+	height:20px;
+	line-height:20px;
+}
+.daysnews dd{
+	height:20px;
+	line-height:20px;
+}
+.daysnews dd > span{
+	margin-right:4px;
+}
+
+
+.daysnews .dn-subject{
+	border-right:1px dotted #ddd;
+}
+.daysnews dd .dn-range{
+	color:#fff;
+	text-align:center;
+	padding:1px 4px;
+	background-color:#84BB44;
+}
+

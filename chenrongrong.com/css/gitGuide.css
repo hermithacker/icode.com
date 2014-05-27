@@ -1,0 +1,33 @@
+/* CSS Document */
+
+body{
+	text-align:center;
+}
+.align h1{
+	font-size:60px;
+	font-weight:normal;
+	margin:0px;
+	padding-top:120px;
+	color:#000;
+	line-height:1;
+	font-family:'Chelsea Market',Georgia,serif;
+}
+.align p.main-title{
+	width:960px;
+	font-size:20px;
+	margin:20px auto;
+	color:#000;
+}
+.align p.subtitle{
+	width:960px;
+	font-size:18px;
+	margin:20px auto;
+	color:#000;
+}
+.align div.author-info{
+	margin:20px auto;
+}
+.align div.author-info > div{
+	line-height:25px;
+}
+

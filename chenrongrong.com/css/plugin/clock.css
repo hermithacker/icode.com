@@ -1,0 +1,68 @@
+/*
+	钟表部件	
+*/
+
+/*	Layout */
+#clock
+{
+	position: relative;
+	width: 150px;
+	height: 150px;
+	margin: 0px auto;
+	margin-bottom:10px;
+}
+#seconds,
+#minutes,
+#hours
+{
+	position: absolute;
+	width: 7px;
+	height: 135px;
+	left: 64px;
+}
+#date
+{
+	position: absolute;
+	top: 84px;
+	right: 31px;
+}
+#hours
+{
+	z-index: 1000;
+}
+#minutes
+{
+	width:6px;
+	z-index: 2000;
+}
+
+#seconds
+{
+	z-index: 3000;
+}
+
+/*字体样式以及背景	*/
+#clock{
+	list-style: none;
+	background: url('imgs/clock/clock.png') no-repeat center;
+}
+#date
+{
+	text-shadow:1px 2px 1px #000;
+	color:#fff;
+	font:20px/24px Acens;
+	font-weight:bold;
+	letter-spacing:3px;
+}
+#hours
+{
+	background: url('imgs/clock/hands.png') no-repeat left;
+}
+#minutes
+{
+	background: url('imgs/clock/hands.png') no-repeat center;
+}
+#seconds
+{
+	background: url('imgs/clock/hands.png') no-repeat right;
+}
