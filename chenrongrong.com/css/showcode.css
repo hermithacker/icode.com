@@ -1,0 +1,91 @@
+/* CSS Document */
+
+/*
+	布局
+*/
+.content{
+	
+}
+.sidebar{
+	width:217px;
+	position:absolute;
+	top:10px;
+	left:0px;
+	height:100%;
+}
+
+.main{
+	height:100%;
+	position:relative;
+	margin:14px 15px 0px 232px;
+}
+.main fieldset.column{
+	display:block;
+	height:100%;
+	width:50%;
+}
+.sleft{
+	position:absolute;
+	left:-5px;
+}
+
+.sright{
+	position:absolute;
+	right:-5px;
+}
+
+.main .handler{
+	width:8px;
+	height:100%;
+	padding:5px 0px;
+	position:absolute;
+	top:-5px;
+	left:557px;
+}
+.main .winbox{
+	height:49%;
+	width:100%;
+	border:1px solid #c0c0c0;
+	box-shadow:0px 1px 2px #E4E4E4 inset;
+}
+.main .handler_horizontal{
+	width:100%;
+	height:8px;
+	padding:0px 1px;
+	position:absolute;
+	top:0px;
+	left:0px;
+}
+.stop{
+	height:25%;
+	position:absolute;
+	top:-6px;
+}
+.sbottom {
+    height: 75%;
+    position: absolute;
+    bottom: -6px;
+}
+
+
+/*显示样式*/
+.sidebar{
+	opacity:1;
+	font-size:11px;
+	color:#444;
+	background-color:#fff;
+}
+
+.main{
+	opacity:1;
+	background:none repeat scroll 0% 0% #F6F6F6;
+	transform:opacity 0.4s ease 0s;
+}
+.main .handler{
+	cursor:col-resize;
+	background:url('image/handle-v.png') no-repeat scroll 3px 50% transparent;
+}
+.main .handler_horizontal{
+	cursor:row-resize;
+	background:url('image/handle-h.png') no-repeat scroll 50% 3px transparent
+}
