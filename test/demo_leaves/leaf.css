@@ -1,0 +1,122 @@
+@charset "utf-8";
+/* CSS Document */
+
+#wrapper {
+    margin: 50px auto;
+	height: 600px;
+    overflow: hidden;
+    border: 4px solid #5C090A;
+}
+#wrapper #leafid 
+{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+	/**/
+	animation-iteration-count: infinite, infinite;
+    animation-direction: normal, normal;
+    animation-timing-function: linear, ease-in;
+	
+    -webkit-animation-iteration-count: infinite, infinite;
+    -webkit-animation-direction: normal, normal;
+    -webkit-animation-timing-function: linear, ease-in;
+	
+    -moz-animation-iteration-count: infinite, infinite;
+    -moz-animation-direction: normal, normal;
+    -moz-animation-timing-function: linear, ease-in;
+	
+    -o-animation-iteration-count: infinite, infinite;
+    -o-animation-direction: normal, normal;
+    -o-animation-timing-function: linear, ease-in;
+}
+#wrapper > div > img {
+     position: absolute;
+     width: 100px;
+     height: 100px;
+	 animation-iteration-count: infinite;
+     animation-direction: alternate;
+     animation-timing-function: ease-in-out;
+     transform-origin: 50% -100%;
+	 /*Chrome Safari*/
+     -webkit-animation-iteration-count: infinite;
+     -webkit-animation-direction: alternate;
+     -webkit-animation-timing-function: ease-in-out;
+     -webkit-transform-origin: 50% -100%;
+	 /*Firefox*/
+     -moz-animation-iteration-count: infinite;
+     -moz-animation-direction: alternate;
+     -moz-animation-timing-function: ease-in-out;
+     -moz-transform-origin: 50% -100%;
+	 /*Opera*/
+	 -o-animation-iteration-count: infinite;
+     -o-animation-direction: alternate;
+     -o-animation-timing-function: ease-in-out;
+     -o-transform-origin: 50% -100%;	 
+}
+@keyframes fade,
+@-webkit-keyframes fade,
+@-moz-keyframes fade,
+@-o-keyframes fade
+{
+    0%   { opacity: 1; }
+    95%  { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+@keyframes drop{
+    0%   { transform: translate(0px, -50px); }
+    100% { transform: translate(0px, 650px); }
+}
+@-webkit-keyframes drop{
+    0%   { -webkit-transform: translate(0px, -50px); }
+    100% { -webkit-transform: translate(0px, 650px); }
+}
+@-moz-keyframes drop{
+	
+    0%   { -moz-transform: translate(0px, -50px); }
+    100% { -moz-transform: translate(0px, 650px); }
+}
+@-o-keyframes drop
+{
+    0%   { -o-transform: translate(0px, -50px); }
+    100% { -o-transform: translate(0px, 650px); }
+}
+
+@keyframes clockwiseSpin{
+    0%   { transform: rotate(-50deg); }
+    100% { transform: rotate(50deg); }
+}
+@-webkit-keyframes clockwiseSpin{
+    0%   { -webkit-transform: rotate(-50deg); }
+    100% { -webkit-transform: rotate(50deg); }
+}
+@-moz-keyframes clockwiseSpin{
+    0%   { -moz-transform: rotate(-50deg); }
+    100% { -moz-transform: rotate(50deg); }
+}
+@-o-keyframes clockwiseSpin
+{
+    0%   { -o-transform: rotate(-50deg); }
+    100% { -o-transform: rotate(50deg); }
+}
+
+@keyframes counterclockwiseSpinAndFlip
+{
+    0%   { transform: scale(-1, 1) rotate(50deg); }
+    100% { transform: scale(-1, 1) rotate(-50deg); }
+}
+@-webkit-keyframes counterclockwiseSpinAndFlip
+{
+    0%   { -webkit-transform: scale(-1, 1) rotate(50deg); }
+    100% { -webkit-transform: scale(-1, 1) rotate(-50deg); }
+}
+@-moz-keyframes counterclockwiseSpinAndFlip
+{
+    0%   { -moz-transform: scale(-1, 1) rotate(50deg); }
+    100% { -moz-transform: scale(-1, 1) rotate(-50deg); }
+}
+@-o-keyframes counterclockwiseSpinAndFlip
+{
+    0%   { -o-transform: scale(-1, 1) rotate(50deg); }
+    100% { -o-transform: scale(-1, 1) rotate(-50deg); }
+}

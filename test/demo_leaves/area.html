@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<link href="area.css" rel="stylesheet" type="text/css" />
+<script src="jquery-1.10.2.js" type="text/javascript"></script>
+</head>
+
+<body>
+
+<div id="wrapper" onclick="getPosByElement(this,event)">
+
+</div>
+<input type="button" id="save" onclick="saveData()" value="保存" />
+</body>
+<script type="text/javascript">
+	var leaves = [];
+	window.onbeforeunload = onbeforeunload_handler;  
+	//获取相对于当前元素的位置
+	function getPosByElement(o,e){
+		var mousrPos = getMousePoints(e);
+		var elePos   = getElementPoints(o);
+		var leaf   = {x:0,y:0,t:1};
+		leaf.x = mousrPos.x - elePos.left;
+		leaf.y = mousrPos.y - elePos.top;
+		leaf.t = 1;
+		leaves.push(leaf);
+	}
+	
+	function saveData(){
+		$.ajax({
+			type: "POST",
+			url:'addpoint.php',
+			data:'points='+convertToJSON(leaves),
+			cache: false,
+            dataType: 'text',
+			success: function(msg){
+				if(msg){
+					$("#wrapper").html(msg);
+				}
+			},
+            error: function (xhr) {
+                alert("出现错误，请稍后再试:" + xhr.responseText);
+            }
+		});
+	}
+	
+	//将对象转化成为JSON
+	function convertToJSON(objArray){
+		var jsonstr = [];
+        jsonstr.push('[');
+        if (objArray.length > 0) { 
+             for (var i = 0; i < objArray.length; i++){
+                 jsonstr.push("{");
+                 jsonstr.push('"x":"' + objArray[i].x + '",');
+                 jsonstr.push('"y":"' + objArray[i].y + '",');
+                 jsonstr.push('"t":"' + objArray[i].t + '"');
+                 jsonstr.push("}");
+                 if (i < objArray.length - 1) {
+                     jsonstr.push(",");
+                 }
+             }
+         }
+         jsonstr.push(']');
+         return jsonstr.join("");
+	}
+	
+	//关闭之前执行
+	function onbeforeunload_handler(){
+	}
+	
+	//相对于文档的鼠标 点击坐标点
+	function getMousePoints(event){
+		var e = event || window.event;
+		var scrollX = document.documentElement.scrollLeft || document.body.scrollLeft;
+		var scrollY = document.documentElement.scrollTop || document.body.scrollTop;
+		var x = e.pageX || e.clientX + scrollX;
+		var y = e.pageY || e.clientY + scrollY;
+		return { 'x': x, 'y': y };
+	}
+	
+	//获取当前元素的相对位置
+	function getElementPoints(o){
+		var pos = o.getBoundingClientRect();
+		
+		return {"top":pos.top,
+			    "left":pos.left,
+			    "bottom":pos.bottom,
+			    "right":pos.right,
+			    "width":pos.width,
+			    "height":pos.height};
+	}
+	
+</script>
+</html>
